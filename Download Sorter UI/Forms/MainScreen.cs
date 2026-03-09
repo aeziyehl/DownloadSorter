@@ -61,5 +61,15 @@ namespace Download_Sorter_UI.Forms
             }
 
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void sortNowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sort_File();
+        }
     }
 }

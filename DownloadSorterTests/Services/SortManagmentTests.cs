@@ -8,14 +8,14 @@ namespace DownloadSorter.Services.Tests
         [TestMethod()]
         public void Sort_FileTest()
         {
-            SortManagment sortManagment = new SortManagment();
+            SortManager sortManagment = new SortManager();
             try
             {
                 sortManagment.Sort_File();
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                ConsoleDisplay.WriteLine(ex.ToString());
             }
             //Console.WriteLine("FAILED");
 
@@ -24,14 +24,14 @@ namespace DownloadSorter.Services.Tests
         [TestMethod()]
         public void ListSortsTest()
         {
-            SortManagment sortManagment = new SortManagment();
+            SortManager sortManagment = new SortManager();
             try
             {
                 sortManagment.ListSorts(false);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                ConsoleDisplay.WriteLine(ex.ToString());
             }
 
 

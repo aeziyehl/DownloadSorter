@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DownloadSorter": {
+      "commandName": "Project",
+      "commandLineArgs": "Console"
+    }
+  }
+}

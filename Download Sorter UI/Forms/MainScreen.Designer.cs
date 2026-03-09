@@ -31,13 +31,38 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScreen));
             Notification_Informer = new NotifyIcon(components);
+            trayOptions = new ContextMenuStrip(components);
+            exitToolStripMenuItem = new ToolStripMenuItem();
+            sortNowToolStripMenuItem = new ToolStripMenuItem();
+            trayOptions.SuspendLayout();
             SuspendLayout();
             // 
             // Notification_Informer
             // 
+            Notification_Informer.ContextMenuStrip = trayOptions;
             Notification_Informer.Icon = (Icon)resources.GetObject("Notification_Informer.Icon");
             Notification_Informer.Text = "notifyIcon1";
             Notification_Informer.Visible = true;
+            // 
+            // trayOptions
+            // 
+            trayOptions.Items.AddRange(new ToolStripItem[] { exitToolStripMenuItem, sortNowToolStripMenuItem });
+            trayOptions.Name = "trayOptions";
+            trayOptions.Size = new Size(124, 48);
+            // 
+            // exitToolStripMenuItem
+            // 
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Size = new Size(123, 22);
+            exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+            // 
+            // sortNowToolStripMenuItem
+            // 
+            sortNowToolStripMenuItem.Name = "sortNowToolStripMenuItem";
+            sortNowToolStripMenuItem.Size = new Size(123, 22);
+            sortNowToolStripMenuItem.Text = "Sort Now";
+            sortNowToolStripMenuItem.Click += sortNowToolStripMenuItem_Click;
             // 
             // MainScreen
             // 
@@ -47,10 +72,14 @@
             Name = "MainScreen";
             Text = "MainScreen";
             WindowState = FormWindowState.Minimized;
+            trayOptions.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
         private NotifyIcon Notification_Informer;
+        private ContextMenuStrip trayOptions;
+        private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem sortNowToolStripMenuItem;
     }
 }
