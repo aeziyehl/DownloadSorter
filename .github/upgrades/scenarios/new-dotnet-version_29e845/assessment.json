@@ -1,0 +1,2653 @@
+{
+  "settings": {
+    "components": {
+      "code": true,
+      "binaries": false
+    },
+    "targetId": "net10.0",
+    "targetDisplayName": ".NETCoreApp,Version=v10.0"
+  },
+  "analysisStartTime": "2026-03-09T12:10:24.9060408Z",
+  "analysisEndTime": "2026-03-09T12:10:31.9767775Z",
+  "privacyModeHelpUrl": "https://go.microsoft.com/fwlink/?linkid=2270980",
+  "stats": {
+    "summary": {
+      "projects": 3,
+      "issues": 7,
+      "incidents": 114,
+      "effort": 114
+    },
+    "charts": {
+      "severity": {
+        "Mandatory": 111,
+        "Optional": 0,
+        "Potential": 3,
+        "Information": 0
+      },
+      "category": {
+        "Project": 3,
+        "Api": 109,
+        "NuGet": 2
+      }
+    }
+  },
+  "projects": [
+    {
+      "path": "Download Sorter UI\\Download Sorter UI.csproj",
+      "startingProject": true,
+      "issues": 3,
+      "storyPoints": 110,
+      "properties": {
+        "appName": "Download Sorter UI",
+        "projectKind": "WinForms",
+        "frameworks": [
+          "net7.0-windows7.0"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 5,
+        "numberOfCodeFiles": 4,
+        "linesTotal": 2120,
+        "linesOfCode": 202,
+        "totalApiScanned": 284,
+        "minLinesOfCodeToChange": 109,
+        "maxLinesOfCodeToChange": 109
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "b9aaf179-dca5-467d-abd0-130c031515b3",
+          "ruleId": "Project.0002",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: net7.0-windows7.0\nRecommended target framework: net10.0-windows",
+              "protected": "Current target framework: net7.0-windows7.0\nRecommended target framework: net10.0-windows"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Download Sorter UI.csproj",
+            "snippet": "Current target framework: net7.0-windows7.0\nRecommended target framework: net10.0-windows",
+            "protectedSnippet": "Current target framework: net7.0-windows7.0\nRecommended target framework: net10.0-windows",
+            "properties": {
+              "CurrentTargetFramework": "net7.0-windows7.0",
+              "RecommendedTargetFramework": "net10.0-windows"
+            }
+          }
+        },
+        {
+          "incidentId": "9290a249-afb1-42c9-84dd-1e56ba9e6290",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Close();",
+              "protected": "M:System.Windows.Forms.Form.Close"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "Close();",
+            "protectedSnippet": "M:System.Windows.Forms.Form.Close",
+            "label": "M:System.Windows.Forms.Form.Close",
+            "line": 66,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "e1d1f2bd-09ce-4e82-bdc0-0980d2518d42",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.ShowBalloonTip(500);",
+              "protected": "T:System.Windows.Forms.NotifyIcon"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "Notification_Informer.ShowBalloonTip(500);",
+            "protectedSnippet": "T:System.Windows.Forms.NotifyIcon",
+            "label": "T:System.Windows.Forms.NotifyIcon",
+            "line": 15,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "6a44b81b-1f32-4572-9858-be4c8a308172",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.ShowBalloonTip(500);",
+              "protected": "M:System.Windows.Forms.NotifyIcon.ShowBalloonTip(System.Int32)"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "Notification_Informer.ShowBalloonTip(500);",
+            "protectedSnippet": "M:System.Windows.Forms.NotifyIcon.ShowBalloonTip(System.Int32)",
+            "label": "M:System.Windows.Forms.NotifyIcon.ShowBalloonTip(System.Int32)",
+            "line": 15,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "13a7feb0-6e75-481e-90b9-3bd15df599bd",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.Visible = true;",
+              "protected": "T:System.Windows.Forms.NotifyIcon"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "Notification_Informer.Visible = true;",
+            "protectedSnippet": "T:System.Windows.Forms.NotifyIcon",
+            "label": "T:System.Windows.Forms.NotifyIcon",
+            "line": 14,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "8c2d66d0-b92c-4687-bf0a-e1b7819d00bd",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.Visible = true;",
+              "protected": "P:System.Windows.Forms.NotifyIcon.Visible"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "Notification_Informer.Visible = true;",
+            "protectedSnippet": "P:System.Windows.Forms.NotifyIcon.Visible",
+            "label": "P:System.Windows.Forms.NotifyIcon.Visible",
+            "line": 14,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "8910a92d-f45d-4893-936c-3b59034b50cf",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.BalloonTipText = \u0022To disable the app from starting, uncheck Start with Windows checkbox\u0022;",
+              "protected": "T:System.Windows.Forms.NotifyIcon"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "Notification_Informer.BalloonTipText = \u0022To disable the app from starting, uncheck Start with Windows checkbox\u0022;",
+            "protectedSnippet": "T:System.Windows.Forms.NotifyIcon",
+            "label": "T:System.Windows.Forms.NotifyIcon",
+            "line": 13,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "0e6f6c4e-2da9-4f66-8814-900cfe05085f",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.BalloonTipText = \u0022To disable the app from starting, uncheck Start with Windows checkbox\u0022;",
+              "protected": "P:System.Windows.Forms.NotifyIcon.BalloonTipText"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "Notification_Informer.BalloonTipText = \u0022To disable the app from starting, uncheck Start with Windows checkbox\u0022;",
+            "protectedSnippet": "P:System.Windows.Forms.NotifyIcon.BalloonTipText",
+            "label": "P:System.Windows.Forms.NotifyIcon.BalloonTipText",
+            "line": 13,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "8c3fc63d-bb91-4ea3-9ae2-acad949d676a",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.BalloonTipTitle = \u0022 The App is in System tray\u0022;",
+              "protected": "T:System.Windows.Forms.NotifyIcon"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "Notification_Informer.BalloonTipTitle = \u0022 The App is in System tray\u0022;",
+            "protectedSnippet": "T:System.Windows.Forms.NotifyIcon",
+            "label": "T:System.Windows.Forms.NotifyIcon",
+            "line": 12,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "3e95baf0-e4d1-4c99-a83a-740313087fe4",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.BalloonTipTitle = \u0022 The App is in System tray\u0022;",
+              "protected": "P:System.Windows.Forms.NotifyIcon.BalloonTipTitle"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "Notification_Informer.BalloonTipTitle = \u0022 The App is in System tray\u0022;",
+            "protectedSnippet": "P:System.Windows.Forms.NotifyIcon.BalloonTipTitle",
+            "label": "P:System.Windows.Forms.NotifyIcon.BalloonTipTitle",
+            "line": 12,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "e86182ce-218a-47f4-bd32-684c3d8ff226",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "ShowInTaskbar = false;",
+              "protected": "P:System.Windows.Forms.Form.ShowInTaskbar"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "ShowInTaskbar = false;",
+            "protectedSnippet": "P:System.Windows.Forms.Form.ShowInTaskbar",
+            "label": "P:System.Windows.Forms.Form.ShowInTaskbar",
+            "line": 11,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "19e52f2c-e317-4f58-a1f4-3521d0a44686",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Hide();",
+              "protected": "M:System.Windows.Forms.Control.Hide"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "Hide();",
+            "protectedSnippet": "M:System.Windows.Forms.Control.Hide",
+            "label": "M:System.Windows.Forms.Control.Hide",
+            "line": 10,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "5243e62f-b09a-4b94-9504-8d0056904965",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "public MainScreen()\r\n        {\r\n            InitializeComponent();\r\n            Hide();\r\n            ShowInTaskbar = false;\r\n            Notification_Informer.BalloonTipTitle = \u0022 The App is in System tray\u0022;\r\n            Notification_Informer.BalloonTipText = \u0022To disable the app from starting, uncheck Start with Windows checkbox\u0022;\r\n            Notification_Informer.Visible = true;\r\n            Notification_Informer.ShowBalloonTip(500);\r\n            Sort_File();\r\n        }",
+              "protected": "M:System.Windows.Forms.Form.#ctor"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "public MainScreen()\r\n        {\r\n            InitializeComponent();\r\n            Hide();\r\n            ShowInTaskbar = false;\r\n            Notification_Informer.BalloonTipTitle = \u0022 The App is in System tray\u0022;\r\n            Notification_Informer.BalloonTipText = \u0022To disable the app from starting, uncheck Start with Windows checkbox\u0022;\r\n            Notification_Informer.Visible = true;\r\n            Notification_Informer.ShowBalloonTip(500);\r\n            Sort_File();\r\n        }",
+            "protectedSnippet": "M:System.Windows.Forms.Form.#ctor",
+            "label": "M:System.Windows.Forms.Form.#ctor",
+            "line": 7,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "2bca3ba8-dd37-411f-9eb9-d0b07ca394ca",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "sortNowToolStripMenuItem",
+              "protected": "T:System.Windows.Forms.ToolStripMenuItem"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "sortNowToolStripMenuItem",
+            "protectedSnippet": "T:System.Windows.Forms.ToolStripMenuItem",
+            "label": "T:System.Windows.Forms.ToolStripMenuItem",
+            "line": 82,
+            "column": 34
+          }
+        },
+        {
+          "incidentId": "2e556765-9913-41c7-a06e-4d90bb39286b",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "exitToolStripMenuItem",
+              "protected": "T:System.Windows.Forms.ToolStripMenuItem"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "exitToolStripMenuItem",
+            "protectedSnippet": "T:System.Windows.Forms.ToolStripMenuItem",
+            "label": "T:System.Windows.Forms.ToolStripMenuItem",
+            "line": 81,
+            "column": 34
+          }
+        },
+        {
+          "incidentId": "da1783af-0b25-43e0-a90b-ed8147f51805",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trayOptions",
+              "protected": "T:System.Windows.Forms.ContextMenuStrip"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "trayOptions",
+            "protectedSnippet": "T:System.Windows.Forms.ContextMenuStrip",
+            "label": "T:System.Windows.Forms.ContextMenuStrip",
+            "line": 80,
+            "column": 33
+          }
+        },
+        {
+          "incidentId": "069e3079-3777-4b86-ba27-ae57de366e5f",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer",
+              "protected": "T:System.Windows.Forms.NotifyIcon"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "Notification_Informer",
+            "protectedSnippet": "T:System.Windows.Forms.NotifyIcon",
+            "label": "T:System.Windows.Forms.NotifyIcon",
+            "line": 79,
+            "column": 27
+          }
+        },
+        {
+          "incidentId": "ffa8a841-2ec9-4483-94fb-7574a093f2ed",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "ResumeLayout(false);",
+              "protected": "M:System.Windows.Forms.Control.ResumeLayout(System.Boolean)"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "ResumeLayout(false);",
+            "protectedSnippet": "M:System.Windows.Forms.Control.ResumeLayout(System.Boolean)",
+            "label": "M:System.Windows.Forms.Control.ResumeLayout(System.Boolean)",
+            "line": 75,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "8158d21f-c655-4219-8271-62001b086735",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trayOptions.ResumeLayout(false);",
+              "protected": "T:System.Windows.Forms.ContextMenuStrip"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "trayOptions.ResumeLayout(false);",
+            "protectedSnippet": "T:System.Windows.Forms.ContextMenuStrip",
+            "label": "T:System.Windows.Forms.ContextMenuStrip",
+            "line": 74,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "7ab5b2df-e250-4fbb-9b76-57e94a39e305",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trayOptions.ResumeLayout(false);",
+              "protected": "M:System.Windows.Forms.Control.ResumeLayout(System.Boolean)"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "trayOptions.ResumeLayout(false);",
+            "protectedSnippet": "M:System.Windows.Forms.Control.ResumeLayout(System.Boolean)",
+            "label": "M:System.Windows.Forms.Control.ResumeLayout(System.Boolean)",
+            "line": 74,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "16a5cda6-78c3-4547-ac41-12594aecb0c1",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "WindowState = FormWindowState.Minimized;",
+              "protected": "T:System.Windows.Forms.FormWindowState"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "WindowState = FormWindowState.Minimized;",
+            "protectedSnippet": "T:System.Windows.Forms.FormWindowState",
+            "label": "T:System.Windows.Forms.FormWindowState",
+            "line": 73,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "970bc546-dd40-49cd-a88d-3f5751bb5c73",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "WindowState = FormWindowState.Minimized;",
+              "protected": "T:System.Windows.Forms.FormWindowState"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "WindowState = FormWindowState.Minimized;",
+            "protectedSnippet": "T:System.Windows.Forms.FormWindowState",
+            "label": "T:System.Windows.Forms.FormWindowState",
+            "line": 73,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "90c62c8f-6ba9-463f-9ba8-8c2b3b26667a",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "WindowState = FormWindowState.Minimized;",
+              "protected": "F:System.Windows.Forms.FormWindowState.Minimized"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "WindowState = FormWindowState.Minimized;",
+            "protectedSnippet": "F:System.Windows.Forms.FormWindowState.Minimized",
+            "label": "F:System.Windows.Forms.FormWindowState.Minimized",
+            "line": 73,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "0deccdcb-37e1-4924-9819-5377a73ca689",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "WindowState = FormWindowState.Minimized;",
+              "protected": "T:System.Windows.Forms.FormWindowState"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "WindowState = FormWindowState.Minimized;",
+            "protectedSnippet": "T:System.Windows.Forms.FormWindowState",
+            "label": "T:System.Windows.Forms.FormWindowState",
+            "line": 73,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "03b7439b-fd7a-4bc1-8d4b-9d28e93f9efe",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "WindowState = FormWindowState.Minimized;",
+              "protected": "P:System.Windows.Forms.Form.WindowState"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "WindowState = FormWindowState.Minimized;",
+            "protectedSnippet": "P:System.Windows.Forms.Form.WindowState",
+            "label": "P:System.Windows.Forms.Form.WindowState",
+            "line": 73,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "3723ed75-2c35-4840-b657-48d4c5aa315a",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Text = \u0022MainScreen\u0022;",
+              "protected": "P:System.Windows.Forms.Form.Text"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "Text = \u0022MainScreen\u0022;",
+            "protectedSnippet": "P:System.Windows.Forms.Form.Text",
+            "label": "P:System.Windows.Forms.Form.Text",
+            "line": 72,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "f94a5727-5591-4e14-b667-cac3b4abe03d",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Name = \u0022MainScreen\u0022;",
+              "protected": "P:System.Windows.Forms.Control.Name"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "Name = \u0022MainScreen\u0022;",
+            "protectedSnippet": "P:System.Windows.Forms.Control.Name",
+            "label": "P:System.Windows.Forms.Control.Name",
+            "line": 71,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "5c4fe50b-cfcf-4142-a67c-d1af969b1939",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "ClientSize = new Size(800, 450);",
+              "protected": "P:System.Windows.Forms.Form.ClientSize"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "ClientSize = new Size(800, 450);",
+            "protectedSnippet": "P:System.Windows.Forms.Form.ClientSize",
+            "label": "P:System.Windows.Forms.Form.ClientSize",
+            "line": 70,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "68022d86-1b33-4ff4-b950-6d7f2f4d42f3",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "AutoScaleMode = AutoScaleMode.Font;",
+              "protected": "T:System.Windows.Forms.AutoScaleMode"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "AutoScaleMode = AutoScaleMode.Font;",
+            "protectedSnippet": "T:System.Windows.Forms.AutoScaleMode",
+            "label": "T:System.Windows.Forms.AutoScaleMode",
+            "line": 69,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "4e5a3bda-b906-4fc9-912b-fe1739cef8a6",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "AutoScaleMode = AutoScaleMode.Font;",
+              "protected": "T:System.Windows.Forms.AutoScaleMode"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "AutoScaleMode = AutoScaleMode.Font;",
+            "protectedSnippet": "T:System.Windows.Forms.AutoScaleMode",
+            "label": "T:System.Windows.Forms.AutoScaleMode",
+            "line": 69,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "13fd8380-eb0f-4739-a83b-876c01b39193",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "AutoScaleMode = AutoScaleMode.Font;",
+              "protected": "F:System.Windows.Forms.AutoScaleMode.Font"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "AutoScaleMode = AutoScaleMode.Font;",
+            "protectedSnippet": "F:System.Windows.Forms.AutoScaleMode.Font",
+            "label": "F:System.Windows.Forms.AutoScaleMode.Font",
+            "line": 69,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "b8ac4bdc-cf72-4608-be4f-59c30d3769dd",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "AutoScaleMode = AutoScaleMode.Font;",
+              "protected": "T:System.Windows.Forms.AutoScaleMode"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "AutoScaleMode = AutoScaleMode.Font;",
+            "protectedSnippet": "T:System.Windows.Forms.AutoScaleMode",
+            "label": "T:System.Windows.Forms.AutoScaleMode",
+            "line": 69,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "662087b6-4af6-41b1-8153-b898fca31758",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "AutoScaleMode = AutoScaleMode.Font;",
+              "protected": "P:System.Windows.Forms.ContainerControl.AutoScaleMode"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "AutoScaleMode = AutoScaleMode.Font;",
+            "protectedSnippet": "P:System.Windows.Forms.ContainerControl.AutoScaleMode",
+            "label": "P:System.Windows.Forms.ContainerControl.AutoScaleMode",
+            "line": 69,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "138bc503-bd33-4185-a1b2-1dfabc6e963b",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "AutoScaleDimensions = new SizeF(7F, 15F);",
+              "protected": "P:System.Windows.Forms.ContainerControl.AutoScaleDimensions"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "AutoScaleDimensions = new SizeF(7F, 15F);",
+            "protectedSnippet": "P:System.Windows.Forms.ContainerControl.AutoScaleDimensions",
+            "label": "P:System.Windows.Forms.ContainerControl.AutoScaleDimensions",
+            "line": 68,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "6dbe877a-489d-46dc-881f-12006225f5fc",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "sortNowToolStripMenuItem.Click \u002B= sortNowToolStripMenuItem_Click;",
+              "protected": "T:System.Windows.Forms.ToolStripMenuItem"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "sortNowToolStripMenuItem.Click \u002B= sortNowToolStripMenuItem_Click;",
+            "protectedSnippet": "T:System.Windows.Forms.ToolStripMenuItem",
+            "label": "T:System.Windows.Forms.ToolStripMenuItem",
+            "line": 64,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "adbcbc32-42dd-496d-989e-72af2cdffff3",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "sortNowToolStripMenuItem.Click \u002B= sortNowToolStripMenuItem_Click;",
+              "protected": "E:System.Windows.Forms.ToolStripItem.Click"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "sortNowToolStripMenuItem.Click \u002B= sortNowToolStripMenuItem_Click;",
+            "protectedSnippet": "E:System.Windows.Forms.ToolStripItem.Click",
+            "label": "E:System.Windows.Forms.ToolStripItem.Click",
+            "line": 64,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "ea5a989d-5f05-4fd4-9f60-9c70a3cf5ecb",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "sortNowToolStripMenuItem.Text = \u0022Sort Now\u0022;",
+              "protected": "T:System.Windows.Forms.ToolStripMenuItem"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "sortNowToolStripMenuItem.Text = \u0022Sort Now\u0022;",
+            "protectedSnippet": "T:System.Windows.Forms.ToolStripMenuItem",
+            "label": "T:System.Windows.Forms.ToolStripMenuItem",
+            "line": 63,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "bf1410a5-0920-4f7b-8526-7248fd091776",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "sortNowToolStripMenuItem.Text = \u0022Sort Now\u0022;",
+              "protected": "P:System.Windows.Forms.ToolStripItem.Text"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "sortNowToolStripMenuItem.Text = \u0022Sort Now\u0022;",
+            "protectedSnippet": "P:System.Windows.Forms.ToolStripItem.Text",
+            "label": "P:System.Windows.Forms.ToolStripItem.Text",
+            "line": 63,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "8b7cb93a-1132-4d44-b5dc-b10faa729d56",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "sortNowToolStripMenuItem.Size = new Size(123, 22);",
+              "protected": "T:System.Windows.Forms.ToolStripMenuItem"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "sortNowToolStripMenuItem.Size = new Size(123, 22);",
+            "protectedSnippet": "T:System.Windows.Forms.ToolStripMenuItem",
+            "label": "T:System.Windows.Forms.ToolStripMenuItem",
+            "line": 62,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "988b440a-69cf-40e5-b5a7-1c7beb82a962",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "sortNowToolStripMenuItem.Size = new Size(123, 22);",
+              "protected": "P:System.Windows.Forms.ToolStripItem.Size"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "sortNowToolStripMenuItem.Size = new Size(123, 22);",
+            "protectedSnippet": "P:System.Windows.Forms.ToolStripItem.Size",
+            "label": "P:System.Windows.Forms.ToolStripItem.Size",
+            "line": 62,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "612ef8c9-35e5-4ee3-8403-4652f41125b7",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "sortNowToolStripMenuItem.Name = \u0022sortNowToolStripMenuItem\u0022;",
+              "protected": "T:System.Windows.Forms.ToolStripMenuItem"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "sortNowToolStripMenuItem.Name = \u0022sortNowToolStripMenuItem\u0022;",
+            "protectedSnippet": "T:System.Windows.Forms.ToolStripMenuItem",
+            "label": "T:System.Windows.Forms.ToolStripMenuItem",
+            "line": 61,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "f2da1780-a9ba-4086-a0e8-3c2811b1ea31",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "sortNowToolStripMenuItem.Name = \u0022sortNowToolStripMenuItem\u0022;",
+              "protected": "P:System.Windows.Forms.ToolStripItem.Name"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "sortNowToolStripMenuItem.Name = \u0022sortNowToolStripMenuItem\u0022;",
+            "protectedSnippet": "P:System.Windows.Forms.ToolStripItem.Name",
+            "label": "P:System.Windows.Forms.ToolStripItem.Name",
+            "line": 61,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "650e2e43-8dff-4e4f-9a1d-125084fb6eb6",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "exitToolStripMenuItem.Click \u002B= exitToolStripMenuItem_Click;",
+              "protected": "T:System.Windows.Forms.ToolStripMenuItem"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "exitToolStripMenuItem.Click \u002B= exitToolStripMenuItem_Click;",
+            "protectedSnippet": "T:System.Windows.Forms.ToolStripMenuItem",
+            "label": "T:System.Windows.Forms.ToolStripMenuItem",
+            "line": 57,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "6dee05ff-02c2-4859-ba25-2f8f83f9ad4a",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "exitToolStripMenuItem.Click \u002B= exitToolStripMenuItem_Click;",
+              "protected": "E:System.Windows.Forms.ToolStripItem.Click"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "exitToolStripMenuItem.Click \u002B= exitToolStripMenuItem_Click;",
+            "protectedSnippet": "E:System.Windows.Forms.ToolStripItem.Click",
+            "label": "E:System.Windows.Forms.ToolStripItem.Click",
+            "line": 57,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "2befec20-6cc7-4466-a55a-8a64733aa7ac",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "exitToolStripMenuItem.Text = \u0022Exit\u0022;",
+              "protected": "T:System.Windows.Forms.ToolStripMenuItem"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "exitToolStripMenuItem.Text = \u0022Exit\u0022;",
+            "protectedSnippet": "T:System.Windows.Forms.ToolStripMenuItem",
+            "label": "T:System.Windows.Forms.ToolStripMenuItem",
+            "line": 56,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "c713bb45-4937-486b-a520-bcd2745a387e",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "exitToolStripMenuItem.Text = \u0022Exit\u0022;",
+              "protected": "P:System.Windows.Forms.ToolStripItem.Text"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "exitToolStripMenuItem.Text = \u0022Exit\u0022;",
+            "protectedSnippet": "P:System.Windows.Forms.ToolStripItem.Text",
+            "label": "P:System.Windows.Forms.ToolStripItem.Text",
+            "line": 56,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "2bafc063-166e-4cb6-9d3b-8422c48eb6a3",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "exitToolStripMenuItem.Size = new Size(123, 22);",
+              "protected": "T:System.Windows.Forms.ToolStripMenuItem"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "exitToolStripMenuItem.Size = new Size(123, 22);",
+            "protectedSnippet": "T:System.Windows.Forms.ToolStripMenuItem",
+            "label": "T:System.Windows.Forms.ToolStripMenuItem",
+            "line": 55,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "efb0fa24-13f6-4e93-afcf-3720afe66242",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "exitToolStripMenuItem.Size = new Size(123, 22);",
+              "protected": "P:System.Windows.Forms.ToolStripItem.Size"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "exitToolStripMenuItem.Size = new Size(123, 22);",
+            "protectedSnippet": "P:System.Windows.Forms.ToolStripItem.Size",
+            "label": "P:System.Windows.Forms.ToolStripItem.Size",
+            "line": 55,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "ea35572a-8a11-4b8f-9422-c7ce7d2f9b03",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "exitToolStripMenuItem.Name = \u0022exitToolStripMenuItem\u0022;",
+              "protected": "T:System.Windows.Forms.ToolStripMenuItem"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "exitToolStripMenuItem.Name = \u0022exitToolStripMenuItem\u0022;",
+            "protectedSnippet": "T:System.Windows.Forms.ToolStripMenuItem",
+            "label": "T:System.Windows.Forms.ToolStripMenuItem",
+            "line": 54,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "cdda3fce-94e3-46f5-b77e-0b8259cce787",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "exitToolStripMenuItem.Name = \u0022exitToolStripMenuItem\u0022;",
+              "protected": "P:System.Windows.Forms.ToolStripItem.Name"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "exitToolStripMenuItem.Name = \u0022exitToolStripMenuItem\u0022;",
+            "protectedSnippet": "P:System.Windows.Forms.ToolStripItem.Name",
+            "label": "P:System.Windows.Forms.ToolStripItem.Name",
+            "line": 54,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "49506c64-4d90-4773-aab9-2cc54786a14f",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trayOptions.Size = new Size(124, 48);",
+              "protected": "T:System.Windows.Forms.ContextMenuStrip"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "trayOptions.Size = new Size(124, 48);",
+            "protectedSnippet": "T:System.Windows.Forms.ContextMenuStrip",
+            "label": "T:System.Windows.Forms.ContextMenuStrip",
+            "line": 50,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "44735099-0b57-47a7-9ff9-859d373c51c8",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trayOptions.Size = new Size(124, 48);",
+              "protected": "P:System.Windows.Forms.Control.Size"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "trayOptions.Size = new Size(124, 48);",
+            "protectedSnippet": "P:System.Windows.Forms.Control.Size",
+            "label": "P:System.Windows.Forms.Control.Size",
+            "line": 50,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "1a0fc306-efa8-49ee-a8c4-df64ad084c9f",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trayOptions.Name = \u0022trayOptions\u0022;",
+              "protected": "T:System.Windows.Forms.ContextMenuStrip"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "trayOptions.Name = \u0022trayOptions\u0022;",
+            "protectedSnippet": "T:System.Windows.Forms.ContextMenuStrip",
+            "label": "T:System.Windows.Forms.ContextMenuStrip",
+            "line": 49,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "be9220d6-975e-47e5-8478-e798550ba1ca",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trayOptions.Name = \u0022trayOptions\u0022;",
+              "protected": "P:System.Windows.Forms.Control.Name"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "trayOptions.Name = \u0022trayOptions\u0022;",
+            "protectedSnippet": "P:System.Windows.Forms.Control.Name",
+            "label": "P:System.Windows.Forms.Control.Name",
+            "line": 49,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "f180acb2-b4ca-4b47-bab8-67350fb23529",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trayOptions.Items.AddRange(new ToolStripItem[] { exitToolStripMenuItem, sortNowToolStripMenuItem });",
+              "protected": "T:System.Windows.Forms.ToolStripMenuItem"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "trayOptions.Items.AddRange(new ToolStripItem[] { exitToolStripMenuItem, sortNowToolStripMenuItem });",
+            "protectedSnippet": "T:System.Windows.Forms.ToolStripMenuItem",
+            "label": "T:System.Windows.Forms.ToolStripMenuItem",
+            "line": 48,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "9a43d6fd-65a7-454d-b0c3-9eb680f1511a",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trayOptions.Items.AddRange(new ToolStripItem[] { exitToolStripMenuItem, sortNowToolStripMenuItem });",
+              "protected": "T:System.Windows.Forms.ToolStripMenuItem"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "trayOptions.Items.AddRange(new ToolStripItem[] { exitToolStripMenuItem, sortNowToolStripMenuItem });",
+            "protectedSnippet": "T:System.Windows.Forms.ToolStripMenuItem",
+            "label": "T:System.Windows.Forms.ToolStripMenuItem",
+            "line": 48,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "271aaaa9-7fc6-42d3-bd23-cce5fd9c67ea",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trayOptions.Items.AddRange(new ToolStripItem[] { exitToolStripMenuItem, sortNowToolStripMenuItem });",
+              "protected": "T:System.Windows.Forms.ContextMenuStrip"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "trayOptions.Items.AddRange(new ToolStripItem[] { exitToolStripMenuItem, sortNowToolStripMenuItem });",
+            "protectedSnippet": "T:System.Windows.Forms.ContextMenuStrip",
+            "label": "T:System.Windows.Forms.ContextMenuStrip",
+            "line": 48,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "4002e9b5-6b09-4f49-a75a-d78d7b3297c0",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trayOptions.Items.AddRange(new ToolStripItem[] { exitToolStripMenuItem, sortNowToolStripMenuItem });",
+              "protected": "T:System.Windows.Forms.ToolStripItemCollection"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "trayOptions.Items.AddRange(new ToolStripItem[] { exitToolStripMenuItem, sortNowToolStripMenuItem });",
+            "protectedSnippet": "T:System.Windows.Forms.ToolStripItemCollection",
+            "label": "T:System.Windows.Forms.ToolStripItemCollection",
+            "line": 48,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "8d16d1b8-b6a2-4115-b3b7-f1fb70b0c03c",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trayOptions.Items.AddRange(new ToolStripItem[] { exitToolStripMenuItem, sortNowToolStripMenuItem });",
+              "protected": "P:System.Windows.Forms.ToolStrip.Items"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "trayOptions.Items.AddRange(new ToolStripItem[] { exitToolStripMenuItem, sortNowToolStripMenuItem });",
+            "protectedSnippet": "P:System.Windows.Forms.ToolStrip.Items",
+            "label": "P:System.Windows.Forms.ToolStrip.Items",
+            "line": 48,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "184d8a52-d041-4a41-8f46-1ee98dd435b2",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trayOptions.Items.AddRange(new ToolStripItem[] { exitToolStripMenuItem, sortNowToolStripMenuItem });",
+              "protected": "M:System.Windows.Forms.ToolStripItemCollection.AddRange(System.Windows.Forms.ToolStripItem[])"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "trayOptions.Items.AddRange(new ToolStripItem[] { exitToolStripMenuItem, sortNowToolStripMenuItem });",
+            "protectedSnippet": "M:System.Windows.Forms.ToolStripItemCollection.AddRange(System.Windows.Forms.ToolStripItem[])",
+            "label": "M:System.Windows.Forms.ToolStripItemCollection.AddRange(System.Windows.Forms.ToolStripItem[])",
+            "line": 48,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "353a8707-1265-4d47-bbe9-3eb4dfdb3c7f",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.Visible = true;",
+              "protected": "T:System.Windows.Forms.NotifyIcon"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "Notification_Informer.Visible = true;",
+            "protectedSnippet": "T:System.Windows.Forms.NotifyIcon",
+            "label": "T:System.Windows.Forms.NotifyIcon",
+            "line": 44,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "322663e8-4c13-482e-96a5-4c9c6b3e4a0f",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.Visible = true;",
+              "protected": "P:System.Windows.Forms.NotifyIcon.Visible"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "Notification_Informer.Visible = true;",
+            "protectedSnippet": "P:System.Windows.Forms.NotifyIcon.Visible",
+            "label": "P:System.Windows.Forms.NotifyIcon.Visible",
+            "line": 44,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "ebb24ce0-28c3-4ee5-b475-dbb67b97ed56",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.Text = \u0022notifyIcon1\u0022;",
+              "protected": "T:System.Windows.Forms.NotifyIcon"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "Notification_Informer.Text = \u0022notifyIcon1\u0022;",
+            "protectedSnippet": "T:System.Windows.Forms.NotifyIcon",
+            "label": "T:System.Windows.Forms.NotifyIcon",
+            "line": 43,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "aaa439ec-8eee-4487-9d7c-bc9d598b307e",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.Text = \u0022notifyIcon1\u0022;",
+              "protected": "P:System.Windows.Forms.NotifyIcon.Text"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "Notification_Informer.Text = \u0022notifyIcon1\u0022;",
+            "protectedSnippet": "P:System.Windows.Forms.NotifyIcon.Text",
+            "label": "P:System.Windows.Forms.NotifyIcon.Text",
+            "line": 43,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "0858c57a-9624-425b-afc8-5d50bb6c90d2",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.Icon = (Icon)resources.GetObject(\u0022Notification_Informer.Icon\u0022);",
+              "protected": "T:System.Windows.Forms.NotifyIcon"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "Notification_Informer.Icon = (Icon)resources.GetObject(\u0022Notification_Informer.Icon\u0022);",
+            "protectedSnippet": "T:System.Windows.Forms.NotifyIcon",
+            "label": "T:System.Windows.Forms.NotifyIcon",
+            "line": 42,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "fbe4ecc5-0bb2-4b32-a113-048dbbc1c854",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Drawing.Common, 8.0.6. Add package reference to System.Drawing.Common, 8.0.6",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.Icon = (Icon)resources.GetObject(\u0022Notification_Informer.Icon\u0022);",
+              "protected": "T:System.Drawing.Icon"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "Notification_Informer.Icon = (Icon)resources.GetObject(\u0022Notification_Informer.Icon\u0022);",
+            "protectedSnippet": "T:System.Drawing.Icon",
+            "label": "T:System.Drawing.Icon",
+            "properties": {
+              "PackageId": "System.Drawing.Common",
+              "PackageNewVersion": "8.0.6"
+            },
+            "line": 42,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "eeda39ab-5457-45bf-84ab-0f657dd8caaf",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.Icon = (Icon)resources.GetObject(\u0022Notification_Informer.Icon\u0022);",
+              "protected": "P:System.Windows.Forms.NotifyIcon.Icon"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "Notification_Informer.Icon = (Icon)resources.GetObject(\u0022Notification_Informer.Icon\u0022);",
+            "protectedSnippet": "P:System.Windows.Forms.NotifyIcon.Icon",
+            "label": "P:System.Windows.Forms.NotifyIcon.Icon",
+            "line": 42,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "a0d22abb-eb61-484d-a180-a0987f9c2dad",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.ContextMenuStrip = trayOptions;",
+              "protected": "T:System.Windows.Forms.ContextMenuStrip"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "Notification_Informer.ContextMenuStrip = trayOptions;",
+            "protectedSnippet": "T:System.Windows.Forms.ContextMenuStrip",
+            "label": "T:System.Windows.Forms.ContextMenuStrip",
+            "line": 41,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "01176d2e-47fc-4bf0-9abf-887c881ab9a6",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.ContextMenuStrip = trayOptions;",
+              "protected": "T:System.Windows.Forms.NotifyIcon"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "Notification_Informer.ContextMenuStrip = trayOptions;",
+            "protectedSnippet": "T:System.Windows.Forms.NotifyIcon",
+            "label": "T:System.Windows.Forms.NotifyIcon",
+            "line": 41,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "73814862-5137-45c9-96c1-e731ad4c2f0c",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.ContextMenuStrip = trayOptions;",
+              "protected": "T:System.Windows.Forms.ContextMenuStrip"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "Notification_Informer.ContextMenuStrip = trayOptions;",
+            "protectedSnippet": "T:System.Windows.Forms.ContextMenuStrip",
+            "label": "T:System.Windows.Forms.ContextMenuStrip",
+            "line": 41,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "6dda1160-86d9-4138-b1f4-97ed6dc2d7c9",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.ContextMenuStrip = trayOptions;",
+              "protected": "P:System.Windows.Forms.NotifyIcon.ContextMenuStrip"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "Notification_Informer.ContextMenuStrip = trayOptions;",
+            "protectedSnippet": "P:System.Windows.Forms.NotifyIcon.ContextMenuStrip",
+            "label": "P:System.Windows.Forms.NotifyIcon.ContextMenuStrip",
+            "line": 41,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "488b9156-6d9b-4d46-96cf-2056706d4410",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "SuspendLayout();",
+              "protected": "M:System.Windows.Forms.Control.SuspendLayout"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "SuspendLayout();",
+            "protectedSnippet": "M:System.Windows.Forms.Control.SuspendLayout",
+            "label": "M:System.Windows.Forms.Control.SuspendLayout",
+            "line": 37,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "331d73c3-d74c-4b99-89a1-9fdef63a7f2e",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trayOptions.SuspendLayout();",
+              "protected": "T:System.Windows.Forms.ContextMenuStrip"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "trayOptions.SuspendLayout();",
+            "protectedSnippet": "T:System.Windows.Forms.ContextMenuStrip",
+            "label": "T:System.Windows.Forms.ContextMenuStrip",
+            "line": 36,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "9771ea94-ec55-4825-a932-f709c37cd9e3",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trayOptions.SuspendLayout();",
+              "protected": "M:System.Windows.Forms.Control.SuspendLayout"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "trayOptions.SuspendLayout();",
+            "protectedSnippet": "M:System.Windows.Forms.Control.SuspendLayout",
+            "label": "M:System.Windows.Forms.Control.SuspendLayout",
+            "line": 36,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "2c495205-9660-4440-a162-253d739fcccb",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "sortNowToolStripMenuItem = new ToolStripMenuItem();",
+              "protected": "T:System.Windows.Forms.ToolStripMenuItem"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "sortNowToolStripMenuItem = new ToolStripMenuItem();",
+            "protectedSnippet": "T:System.Windows.Forms.ToolStripMenuItem",
+            "label": "T:System.Windows.Forms.ToolStripMenuItem",
+            "line": 35,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "ffdd09b2-9a14-4ff0-905a-c257accd77e7",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "sortNowToolStripMenuItem = new ToolStripMenuItem();",
+              "protected": "M:System.Windows.Forms.ToolStripMenuItem.#ctor"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "sortNowToolStripMenuItem = new ToolStripMenuItem();",
+            "protectedSnippet": "M:System.Windows.Forms.ToolStripMenuItem.#ctor",
+            "label": "M:System.Windows.Forms.ToolStripMenuItem.#ctor",
+            "line": 35,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "8a6d6637-0a6d-4fe3-97bc-cc1a929a4a40",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "sortNowToolStripMenuItem = new ToolStripMenuItem();",
+              "protected": "T:System.Windows.Forms.ToolStripMenuItem"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "sortNowToolStripMenuItem = new ToolStripMenuItem();",
+            "protectedSnippet": "T:System.Windows.Forms.ToolStripMenuItem",
+            "label": "T:System.Windows.Forms.ToolStripMenuItem",
+            "line": 35,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "a9e9f1aa-84a9-4512-8b40-bd6041d26ab9",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "exitToolStripMenuItem = new ToolStripMenuItem();",
+              "protected": "T:System.Windows.Forms.ToolStripMenuItem"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "exitToolStripMenuItem = new ToolStripMenuItem();",
+            "protectedSnippet": "T:System.Windows.Forms.ToolStripMenuItem",
+            "label": "T:System.Windows.Forms.ToolStripMenuItem",
+            "line": 34,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "f6435b59-4d8b-4f60-bcf4-294da223bc49",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "exitToolStripMenuItem = new ToolStripMenuItem();",
+              "protected": "M:System.Windows.Forms.ToolStripMenuItem.#ctor"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "exitToolStripMenuItem = new ToolStripMenuItem();",
+            "protectedSnippet": "M:System.Windows.Forms.ToolStripMenuItem.#ctor",
+            "label": "M:System.Windows.Forms.ToolStripMenuItem.#ctor",
+            "line": 34,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "8b31e0f2-a5b4-4a36-a181-ac2359d561a5",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "exitToolStripMenuItem = new ToolStripMenuItem();",
+              "protected": "T:System.Windows.Forms.ToolStripMenuItem"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "exitToolStripMenuItem = new ToolStripMenuItem();",
+            "protectedSnippet": "T:System.Windows.Forms.ToolStripMenuItem",
+            "label": "T:System.Windows.Forms.ToolStripMenuItem",
+            "line": 34,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "466186b2-2292-4e4e-8239-62227a0a0144",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trayOptions = new ContextMenuStrip(components);",
+              "protected": "T:System.Windows.Forms.ContextMenuStrip"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "trayOptions = new ContextMenuStrip(components);",
+            "protectedSnippet": "T:System.Windows.Forms.ContextMenuStrip",
+            "label": "T:System.Windows.Forms.ContextMenuStrip",
+            "line": 33,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "dfac0f14-25eb-4582-b2b3-846efd9f6e81",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trayOptions = new ContextMenuStrip(components);",
+              "protected": "M:System.Windows.Forms.ContextMenuStrip.#ctor(System.ComponentModel.IContainer)"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "trayOptions = new ContextMenuStrip(components);",
+            "protectedSnippet": "M:System.Windows.Forms.ContextMenuStrip.#ctor(System.ComponentModel.IContainer)",
+            "label": "M:System.Windows.Forms.ContextMenuStrip.#ctor(System.ComponentModel.IContainer)",
+            "line": 33,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "eb944f92-3962-4423-b2cf-09432a7de038",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trayOptions = new ContextMenuStrip(components);",
+              "protected": "T:System.Windows.Forms.ContextMenuStrip"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "trayOptions = new ContextMenuStrip(components);",
+            "protectedSnippet": "T:System.Windows.Forms.ContextMenuStrip",
+            "label": "T:System.Windows.Forms.ContextMenuStrip",
+            "line": 33,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "4f64223d-cfc8-4826-a64a-705f2ebb1019",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer = new NotifyIcon(components);",
+              "protected": "T:System.Windows.Forms.NotifyIcon"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "Notification_Informer = new NotifyIcon(components);",
+            "protectedSnippet": "T:System.Windows.Forms.NotifyIcon",
+            "label": "T:System.Windows.Forms.NotifyIcon",
+            "line": 32,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "29254938-7b2c-41ca-99eb-3afb36317f6e",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer = new NotifyIcon(components);",
+              "protected": "M:System.Windows.Forms.NotifyIcon.#ctor(System.ComponentModel.IContainer)"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "Notification_Informer = new NotifyIcon(components);",
+            "protectedSnippet": "M:System.Windows.Forms.NotifyIcon.#ctor(System.ComponentModel.IContainer)",
+            "label": "M:System.Windows.Forms.NotifyIcon.#ctor(System.ComponentModel.IContainer)",
+            "line": 32,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "ad66fb53-e715-4749-9103-b2e520668cd2",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer = new NotifyIcon(components);",
+              "protected": "T:System.Windows.Forms.NotifyIcon"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "Notification_Informer = new NotifyIcon(components);",
+            "protectedSnippet": "T:System.Windows.Forms.NotifyIcon",
+            "label": "T:System.Windows.Forms.NotifyIcon",
+            "line": 32,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "e9513112-551e-4594-878d-4ebee8c0407f",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "base.Dispose(disposing);",
+              "protected": "M:System.Windows.Forms.Form.Dispose(System.Boolean)"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.Designer.cs",
+            "snippet": "base.Dispose(disposing);",
+            "protectedSnippet": "M:System.Windows.Forms.Form.Dispose(System.Boolean)",
+            "label": "M:System.Windows.Forms.Form.Dispose(System.Boolean)",
+            "line": 19,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "e02e9e62-7f6d-407e-97ec-9624d0c02f04",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.ShowBalloonTip(500);",
+              "protected": "T:System.Windows.Forms.NotifyIcon"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "Notification_Informer.ShowBalloonTip(500);",
+            "protectedSnippet": "T:System.Windows.Forms.NotifyIcon",
+            "label": "T:System.Windows.Forms.NotifyIcon",
+            "line": 15,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "debf1a3b-0741-4af5-920c-0ce7ff726889",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.ShowBalloonTip(500);",
+              "protected": "M:System.Windows.Forms.NotifyIcon.ShowBalloonTip(System.Int32)"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "Notification_Informer.ShowBalloonTip(500);",
+            "protectedSnippet": "M:System.Windows.Forms.NotifyIcon.ShowBalloonTip(System.Int32)",
+            "label": "M:System.Windows.Forms.NotifyIcon.ShowBalloonTip(System.Int32)",
+            "line": 15,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "d135f9e8-4b27-4cbe-bcec-fc910cd96db6",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.Visible = true;",
+              "protected": "T:System.Windows.Forms.NotifyIcon"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "Notification_Informer.Visible = true;",
+            "protectedSnippet": "T:System.Windows.Forms.NotifyIcon",
+            "label": "T:System.Windows.Forms.NotifyIcon",
+            "line": 14,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "6a97a19d-b7c5-4a26-a656-6e80e0327b02",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.Visible = true;",
+              "protected": "P:System.Windows.Forms.NotifyIcon.Visible"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "Notification_Informer.Visible = true;",
+            "protectedSnippet": "P:System.Windows.Forms.NotifyIcon.Visible",
+            "label": "P:System.Windows.Forms.NotifyIcon.Visible",
+            "line": 14,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "4be39ecb-9af8-4269-8ada-29ffaf37820c",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.BalloonTipText = \u0022To disable the app from starting, uncheck Start with Windows checkbox\u0022;",
+              "protected": "T:System.Windows.Forms.NotifyIcon"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "Notification_Informer.BalloonTipText = \u0022To disable the app from starting, uncheck Start with Windows checkbox\u0022;",
+            "protectedSnippet": "T:System.Windows.Forms.NotifyIcon",
+            "label": "T:System.Windows.Forms.NotifyIcon",
+            "line": 13,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "6db3e51b-67f2-4ee3-8d98-c15af5d71b2f",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.BalloonTipText = \u0022To disable the app from starting, uncheck Start with Windows checkbox\u0022;",
+              "protected": "P:System.Windows.Forms.NotifyIcon.BalloonTipText"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "Notification_Informer.BalloonTipText = \u0022To disable the app from starting, uncheck Start with Windows checkbox\u0022;",
+            "protectedSnippet": "P:System.Windows.Forms.NotifyIcon.BalloonTipText",
+            "label": "P:System.Windows.Forms.NotifyIcon.BalloonTipText",
+            "line": 13,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "d313ba25-6eb3-40c1-a0f7-42934b19d90e",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.BalloonTipTitle = \u0022 The App is in System tray\u0022;",
+              "protected": "T:System.Windows.Forms.NotifyIcon"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "Notification_Informer.BalloonTipTitle = \u0022 The App is in System tray\u0022;",
+            "protectedSnippet": "T:System.Windows.Forms.NotifyIcon",
+            "label": "T:System.Windows.Forms.NotifyIcon",
+            "line": 12,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "814ad18f-26fe-48f0-b54a-cd067155dc96",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Notification_Informer.BalloonTipTitle = \u0022 The App is in System tray\u0022;",
+              "protected": "P:System.Windows.Forms.NotifyIcon.BalloonTipTitle"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "Notification_Informer.BalloonTipTitle = \u0022 The App is in System tray\u0022;",
+            "protectedSnippet": "P:System.Windows.Forms.NotifyIcon.BalloonTipTitle",
+            "label": "P:System.Windows.Forms.NotifyIcon.BalloonTipTitle",
+            "line": 12,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "767af05d-0830-4fc2-be99-cc62f18210c9",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "ShowInTaskbar = false;",
+              "protected": "P:System.Windows.Forms.Form.ShowInTaskbar"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "ShowInTaskbar = false;",
+            "protectedSnippet": "P:System.Windows.Forms.Form.ShowInTaskbar",
+            "label": "P:System.Windows.Forms.Form.ShowInTaskbar",
+            "line": 11,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "32c725a6-2bce-4ad0-a834-b6b697e0fda9",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Hide();",
+              "protected": "M:System.Windows.Forms.Control.Hide"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "Hide();",
+            "protectedSnippet": "M:System.Windows.Forms.Control.Hide",
+            "label": "M:System.Windows.Forms.Control.Hide",
+            "line": 10,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "8e6a941c-f92d-4b0b-b05b-9e4c50428200",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "public MainScreen()\r\n        {\r\n            InitializeComponent();\r\n            Hide();\r\n            ShowInTaskbar = false;\r\n            Notification_Informer.BalloonTipTitle = \u0022 The App is in System tray\u0022;\r\n            Notification_Informer.BalloonTipText = \u0022To disable the app from starting, uncheck Start with Windows checkbox\u0022;\r\n            Notification_Informer.Visible = true;\r\n            Notification_Informer.ShowBalloonTip(500);\r\n            Sort_File();\r\n        }",
+              "protected": "M:System.Windows.Forms.Form.#ctor"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "public MainScreen()\r\n        {\r\n            InitializeComponent();\r\n            Hide();\r\n            ShowInTaskbar = false;\r\n            Notification_Informer.BalloonTipTitle = \u0022 The App is in System tray\u0022;\r\n            Notification_Informer.BalloonTipText = \u0022To disable the app from starting, uncheck Start with Windows checkbox\u0022;\r\n            Notification_Informer.Visible = true;\r\n            Notification_Informer.ShowBalloonTip(500);\r\n            Sort_File();\r\n        }",
+            "protectedSnippet": "M:System.Windows.Forms.Form.#ctor",
+            "label": "M:System.Windows.Forms.Form.#ctor",
+            "line": 7,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "653c3242-2ab7-4100-805e-202a7580f42c",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Form",
+              "protected": "T:System.Windows.Forms.Form"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Forms\\MainScreen.cs",
+            "snippet": "Form",
+            "protectedSnippet": "T:System.Windows.Forms.Form",
+            "label": "T:System.Windows.Forms.Form",
+            "line": 5,
+            "column": 38
+          }
+        },
+        {
+          "incidentId": "6d1f0f74-50d7-4a30-b8ae-c7aa29877f39",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "global::System.Windows.Forms.Application.SetHighDpiMode(HighDpiMode.SystemAware);",
+              "protected": "T:System.Windows.Forms.HighDpiMode"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\obj\\Debug\\net10.0-windows7.0\\System.Windows.Forms.Analyzers.CSharp\\System.Windows.Forms.Generators.ApplicationConfigurationGenerator\\ApplicationConfiguration.g.cs",
+            "snippet": "global::System.Windows.Forms.Application.SetHighDpiMode(HighDpiMode.SystemAware);",
+            "protectedSnippet": "T:System.Windows.Forms.HighDpiMode",
+            "label": "T:System.Windows.Forms.HighDpiMode",
+            "line": 26,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "b5575a9f-2bf6-44f1-8b26-bbc130b04b81",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "global::System.Windows.Forms.Application.SetHighDpiMode(HighDpiMode.SystemAware);",
+              "protected": "T:System.Windows.Forms.HighDpiMode"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\obj\\Debug\\net10.0-windows7.0\\System.Windows.Forms.Analyzers.CSharp\\System.Windows.Forms.Generators.ApplicationConfigurationGenerator\\ApplicationConfiguration.g.cs",
+            "snippet": "global::System.Windows.Forms.Application.SetHighDpiMode(HighDpiMode.SystemAware);",
+            "protectedSnippet": "T:System.Windows.Forms.HighDpiMode",
+            "label": "T:System.Windows.Forms.HighDpiMode",
+            "line": 26,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "fc6b305b-1ad0-4022-87d2-955b9b8e008b",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "global::System.Windows.Forms.Application.SetHighDpiMode(HighDpiMode.SystemAware);",
+              "protected": "F:System.Windows.Forms.HighDpiMode.SystemAware"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\obj\\Debug\\net10.0-windows7.0\\System.Windows.Forms.Analyzers.CSharp\\System.Windows.Forms.Generators.ApplicationConfigurationGenerator\\ApplicationConfiguration.g.cs",
+            "snippet": "global::System.Windows.Forms.Application.SetHighDpiMode(HighDpiMode.SystemAware);",
+            "protectedSnippet": "F:System.Windows.Forms.HighDpiMode.SystemAware",
+            "label": "F:System.Windows.Forms.HighDpiMode.SystemAware",
+            "line": 26,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "e6d8aa97-6ca2-4a2d-b1a0-f6c4a4e3e225",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "global::System.Windows.Forms.Application.SetHighDpiMode(HighDpiMode.SystemAware);",
+              "protected": "T:System.Windows.Forms.Application"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\obj\\Debug\\net10.0-windows7.0\\System.Windows.Forms.Analyzers.CSharp\\System.Windows.Forms.Generators.ApplicationConfigurationGenerator\\ApplicationConfiguration.g.cs",
+            "snippet": "global::System.Windows.Forms.Application.SetHighDpiMode(HighDpiMode.SystemAware);",
+            "protectedSnippet": "T:System.Windows.Forms.Application",
+            "label": "T:System.Windows.Forms.Application",
+            "line": 26,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "2080ad9b-3d0f-4a9d-a4c2-fb2c5ea73f84",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "global::System.Windows.Forms.Application.SetHighDpiMode(HighDpiMode.SystemAware);",
+              "protected": "M:System.Windows.Forms.Application.SetHighDpiMode(System.Windows.Forms.HighDpiMode)"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\obj\\Debug\\net10.0-windows7.0\\System.Windows.Forms.Analyzers.CSharp\\System.Windows.Forms.Generators.ApplicationConfigurationGenerator\\ApplicationConfiguration.g.cs",
+            "snippet": "global::System.Windows.Forms.Application.SetHighDpiMode(HighDpiMode.SystemAware);",
+            "protectedSnippet": "M:System.Windows.Forms.Application.SetHighDpiMode(System.Windows.Forms.HighDpiMode)",
+            "label": "M:System.Windows.Forms.Application.SetHighDpiMode(System.Windows.Forms.HighDpiMode)",
+            "line": 26,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "6cbe8371-3172-46ac-a1b1-f5276138f3f7",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "global::System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);",
+              "protected": "T:System.Windows.Forms.Application"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\obj\\Debug\\net10.0-windows7.0\\System.Windows.Forms.Analyzers.CSharp\\System.Windows.Forms.Generators.ApplicationConfigurationGenerator\\ApplicationConfiguration.g.cs",
+            "snippet": "global::System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);",
+            "protectedSnippet": "T:System.Windows.Forms.Application",
+            "label": "T:System.Windows.Forms.Application",
+            "line": 25,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "5c152730-174c-4148-a7cd-a6b8b980de0f",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "global::System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);",
+              "protected": "M:System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(System.Boolean)"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\obj\\Debug\\net10.0-windows7.0\\System.Windows.Forms.Analyzers.CSharp\\System.Windows.Forms.Generators.ApplicationConfigurationGenerator\\ApplicationConfiguration.g.cs",
+            "snippet": "global::System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);",
+            "protectedSnippet": "M:System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(System.Boolean)",
+            "label": "M:System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(System.Boolean)",
+            "line": 25,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "238de2d8-37a7-4668-9a2d-e18e981c5874",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "global::System.Windows.Forms.Application.EnableVisualStyles();",
+              "protected": "T:System.Windows.Forms.Application"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\obj\\Debug\\net10.0-windows7.0\\System.Windows.Forms.Analyzers.CSharp\\System.Windows.Forms.Generators.ApplicationConfigurationGenerator\\ApplicationConfiguration.g.cs",
+            "snippet": "global::System.Windows.Forms.Application.EnableVisualStyles();",
+            "protectedSnippet": "T:System.Windows.Forms.Application",
+            "label": "T:System.Windows.Forms.Application",
+            "line": 24,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "3370fbd0-0405-4593-8a91-3b9e8480366e",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "global::System.Windows.Forms.Application.EnableVisualStyles();",
+              "protected": "M:System.Windows.Forms.Application.EnableVisualStyles"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\obj\\Debug\\net10.0-windows7.0\\System.Windows.Forms.Analyzers.CSharp\\System.Windows.Forms.Generators.ApplicationConfigurationGenerator\\ApplicationConfiguration.g.cs",
+            "snippet": "global::System.Windows.Forms.Application.EnableVisualStyles();",
+            "protectedSnippet": "M:System.Windows.Forms.Application.EnableVisualStyles",
+            "label": "M:System.Windows.Forms.Application.EnableVisualStyles",
+            "line": 24,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "ca27e148-a2c5-414b-b497-c88a589ad0b6",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Application.Run(new MainScreen());",
+              "protected": "T:System.Windows.Forms.Application"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Program.cs",
+            "snippet": "Application.Run(new MainScreen());",
+            "protectedSnippet": "T:System.Windows.Forms.Application",
+            "label": "T:System.Windows.Forms.Application",
+            "line": 15,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "d88674d3-a19c-4c16-85a3-120cd25a8ba9",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "Download Sorter UI\\Download Sorter UI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Application.Run(new MainScreen());",
+              "protected": "M:System.Windows.Forms.Application.Run(System.Windows.Forms.Form)"
+            },
+            "kind": "File",
+            "path": "Download Sorter UI\\Program.cs",
+            "snippet": "Application.Run(new MainScreen());",
+            "protectedSnippet": "M:System.Windows.Forms.Application.Run(System.Windows.Forms.Form)",
+            "label": "M:System.Windows.Forms.Application.Run(System.Windows.Forms.Form)",
+            "line": 15,
+            "column": 12
+          }
+        }
+      ],
+      "features": [
+        {
+          "featureId": "GdiDrawing",
+          "incidents": [
+            "fbe4ecc5-0bb2-4b32-a113-048dbbc1c854"
+          ]
+        },
+        {
+          "featureId": "WinFormsLegacyControls",
+          "incidents": [
+            "6dda1160-86d9-4138-b1f4-97ed6dc2d7c9"
+          ]
+        },
+        {
+          "featureId": "WinForms",
+          "incidents": [
+            "d88674d3-a19c-4c16-85a3-120cd25a8ba9",
+            "ca27e148-a2c5-414b-b497-c88a589ad0b6",
+            "3370fbd0-0405-4593-8a91-3b9e8480366e",
+            "238de2d8-37a7-4668-9a2d-e18e981c5874",
+            "5c152730-174c-4148-a7cd-a6b8b980de0f",
+            "6cbe8371-3172-46ac-a1b1-f5276138f3f7",
+            "2080ad9b-3d0f-4a9d-a4c2-fb2c5ea73f84",
+            "e6d8aa97-6ca2-4a2d-b1a0-f6c4a4e3e225",
+            "fc6b305b-1ad0-4022-87d2-955b9b8e008b",
+            "b5575a9f-2bf6-44f1-8b26-bbc130b04b81",
+            "6d1f0f74-50d7-4a30-b8ae-c7aa29877f39",
+            "653c3242-2ab7-4100-805e-202a7580f42c",
+            "8e6a941c-f92d-4b0b-b05b-9e4c50428200",
+            "32c725a6-2bce-4ad0-a834-b6b697e0fda9",
+            "767af05d-0830-4fc2-be99-cc62f18210c9",
+            "814ad18f-26fe-48f0-b54a-cd067155dc96",
+            "d313ba25-6eb3-40c1-a0f7-42934b19d90e",
+            "6db3e51b-67f2-4ee3-8d98-c15af5d71b2f",
+            "4be39ecb-9af8-4269-8ada-29ffaf37820c",
+            "6a97a19d-b7c5-4a26-a656-6e80e0327b02",
+            "d135f9e8-4b27-4cbe-bcec-fc910cd96db6",
+            "debf1a3b-0741-4af5-920c-0ce7ff726889",
+            "e02e9e62-7f6d-407e-97ec-9624d0c02f04",
+            "e9513112-551e-4594-878d-4ebee8c0407f",
+            "ad66fb53-e715-4749-9103-b2e520668cd2",
+            "29254938-7b2c-41ca-99eb-3afb36317f6e",
+            "4f64223d-cfc8-4826-a64a-705f2ebb1019",
+            "eb944f92-3962-4423-b2cf-09432a7de038",
+            "dfac0f14-25eb-4582-b2b3-846efd9f6e81",
+            "466186b2-2292-4e4e-8239-62227a0a0144",
+            "8b31e0f2-a5b4-4a36-a181-ac2359d561a5",
+            "f6435b59-4d8b-4f60-bcf4-294da223bc49",
+            "a9e9f1aa-84a9-4512-8b40-bd6041d26ab9",
+            "8a6d6637-0a6d-4fe3-97bc-cc1a929a4a40",
+            "ffdd09b2-9a14-4ff0-905a-c257accd77e7",
+            "2c495205-9660-4440-a162-253d739fcccb",
+            "9771ea94-ec55-4825-a932-f709c37cd9e3",
+            "331d73c3-d74c-4b99-89a1-9fdef63a7f2e",
+            "488b9156-6d9b-4d46-96cf-2056706d4410",
+            "6dda1160-86d9-4138-b1f4-97ed6dc2d7c9",
+            "73814862-5137-45c9-96c1-e731ad4c2f0c",
+            "01176d2e-47fc-4bf0-9abf-887c881ab9a6",
+            "a0d22abb-eb61-484d-a180-a0987f9c2dad",
+            "eeda39ab-5457-45bf-84ab-0f657dd8caaf",
+            "0858c57a-9624-425b-afc8-5d50bb6c90d2",
+            "aaa439ec-8eee-4487-9d7c-bc9d598b307e",
+            "ebb24ce0-28c3-4ee5-b475-dbb67b97ed56",
+            "322663e8-4c13-482e-96a5-4c9c6b3e4a0f",
+            "353a8707-1265-4d47-bbe9-3eb4dfdb3c7f",
+            "184d8a52-d041-4a41-8f46-1ee98dd435b2",
+            "8d16d1b8-b6a2-4115-b3b7-f1fb70b0c03c",
+            "4002e9b5-6b09-4f49-a75a-d78d7b3297c0",
+            "271aaaa9-7fc6-42d3-bd23-cce5fd9c67ea",
+            "9a43d6fd-65a7-454d-b0c3-9eb680f1511a",
+            "f180acb2-b4ca-4b47-bab8-67350fb23529",
+            "be9220d6-975e-47e5-8478-e798550ba1ca",
+            "1a0fc306-efa8-49ee-a8c4-df64ad084c9f",
+            "44735099-0b57-47a7-9ff9-859d373c51c8",
+            "49506c64-4d90-4773-aab9-2cc54786a14f",
+            "cdda3fce-94e3-46f5-b77e-0b8259cce787",
+            "ea35572a-8a11-4b8f-9422-c7ce7d2f9b03",
+            "efb0fa24-13f6-4e93-afcf-3720afe66242",
+            "2bafc063-166e-4cb6-9d3b-8422c48eb6a3",
+            "c713bb45-4937-486b-a520-bcd2745a387e",
+            "2befec20-6cc7-4466-a55a-8a64733aa7ac",
+            "6dee05ff-02c2-4859-ba25-2f8f83f9ad4a",
+            "650e2e43-8dff-4e4f-9a1d-125084fb6eb6",
+            "f2da1780-a9ba-4086-a0e8-3c2811b1ea31",
+            "612ef8c9-35e5-4ee3-8403-4652f41125b7",
+            "988b440a-69cf-40e5-b5a7-1c7beb82a962",
+            "8b7cb93a-1132-4d44-b5dc-b10faa729d56",
+            "bf1410a5-0920-4f7b-8526-7248fd091776",
+            "ea5a989d-5f05-4fd4-9f60-9c70a3cf5ecb",
+            "adbcbc32-42dd-496d-989e-72af2cdffff3",
+            "6dbe877a-489d-46dc-881f-12006225f5fc",
+            "138bc503-bd33-4185-a1b2-1dfabc6e963b",
+            "662087b6-4af6-41b1-8153-b898fca31758",
+            "b8ac4bdc-cf72-4608-be4f-59c30d3769dd",
+            "13fd8380-eb0f-4739-a83b-876c01b39193",
+            "4e5a3bda-b906-4fc9-912b-fe1739cef8a6",
+            "68022d86-1b33-4ff4-b950-6d7f2f4d42f3",
+            "5c4fe50b-cfcf-4142-a67c-d1af969b1939",
+            "f94a5727-5591-4e14-b667-cac3b4abe03d",
+            "3723ed75-2c35-4840-b657-48d4c5aa315a",
+            "03b7439b-fd7a-4bc1-8d4b-9d28e93f9efe",
+            "0deccdcb-37e1-4924-9819-5377a73ca689",
+            "90c62c8f-6ba9-463f-9ba8-8c2b3b26667a",
+            "970bc546-dd40-49cd-a88d-3f5751bb5c73",
+            "16a5cda6-78c3-4547-ac41-12594aecb0c1",
+            "7ab5b2df-e250-4fbb-9b76-57e94a39e305",
+            "8158d21f-c655-4219-8271-62001b086735",
+            "ffa8a841-2ec9-4483-94fb-7574a093f2ed",
+            "069e3079-3777-4b86-ba27-ae57de366e5f",
+            "da1783af-0b25-43e0-a90b-ed8147f51805",
+            "2e556765-9913-41c7-a06e-4d90bb39286b",
+            "2bca3ba8-dd37-411f-9eb9-d0b07ca394ca",
+            "5243e62f-b09a-4b94-9504-8d0056904965",
+            "19e52f2c-e317-4f58-a1f4-3521d0a44686",
+            "e86182ce-218a-47f4-bd32-684c3d8ff226",
+            "3e95baf0-e4d1-4c99-a83a-740313087fe4",
+            "8c3fc63d-bb91-4ea3-9ae2-acad949d676a",
+            "0e6f6c4e-2da9-4f66-8814-900cfe05085f",
+            "8910a92d-f45d-4893-936c-3b59034b50cf",
+            "8c2d66d0-b92c-4687-bf0a-e1b7819d00bd",
+            "13a7feb0-6e75-481e-90b9-3bd15df599bd",
+            "6a44b81b-1f32-4572-9858-be4c8a308172",
+            "e1d1f2bd-09ce-4e82-bdc0-0980d2518d42",
+            "9290a249-afb1-42c9-84dd-1e56ba9e6290"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "DownloadSorter\\DownloadSorter.csproj",
+      "startingProject": true,
+      "issues": 2,
+      "storyPoints": 3,
+      "properties": {
+        "appName": "DownloadSorter",
+        "projectKind": "DotNetCoreApp",
+        "frameworks": [
+          "net7.0-windows"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 4,
+        "numberOfCodeFiles": 4,
+        "linesTotal": 471,
+        "linesOfCode": 471,
+        "totalApiScanned": 622,
+        "minLinesOfCodeToChange": 0,
+        "maxLinesOfCodeToChange": 0
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "94092be4-da31-4765-9fbb-39294b222db7",
+          "ruleId": "NuGet.0002",
+          "projectPath": "DownloadSorter\\DownloadSorter.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Extensions.Hosting.WindowsServices, 7.0.1\n\nRecommendation:\n\nRemove Microsoft.Extensions.Hosting.WindowsServices, and replace with new package Microsoft.Extensions.Hosting.WindowsServices 10.0.3",
+              "protected": "Microsoft.Extensions.Hosting.WindowsServices, 7.0.1\n\nRecommendation:\n\nRemove Microsoft.Extensions.Hosting.WindowsServices, and replace with new package Microsoft.Extensions.Hosting.WindowsServices 10.0.3"
+            },
+            "kind": "File",
+            "path": "DownloadSorter\\DownloadSorter.csproj",
+            "snippet": "Microsoft.Extensions.Hosting.WindowsServices, 7.0.1\n\nRecommendation:\n\nRemove Microsoft.Extensions.Hosting.WindowsServices, and replace with new package Microsoft.Extensions.Hosting.WindowsServices 10.0.3",
+            "protectedSnippet": "Microsoft.Extensions.Hosting.WindowsServices, 7.0.1\n\nRecommendation:\n\nRemove Microsoft.Extensions.Hosting.WindowsServices, and replace with new package Microsoft.Extensions.Hosting.WindowsServices 10.0.3",
+            "label": "Microsoft.Extensions.Hosting.WindowsServices 7.0.1",
+            "properties": {
+              "PackageId": "Microsoft.Extensions.Hosting.WindowsServices",
+              "PackageVersion": "7.0.1",
+              "PackageNewVersion": "10.0.3",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "65e7e1a6-5624-4e61-87f9-8c0a76965bea",
+          "ruleId": "NuGet.0002",
+          "projectPath": "DownloadSorter\\DownloadSorter.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Newtonsoft.Json, 13.0.3\n\nRecommendation:\n\nRemove Newtonsoft.Json, and replace with new package Newtonsoft.Json 13.0.4",
+              "protected": "Newtonsoft.Json, 13.0.3\n\nRecommendation:\n\nRemove Newtonsoft.Json, and replace with new package Newtonsoft.Json 13.0.4"
+            },
+            "kind": "File",
+            "path": "DownloadSorter\\DownloadSorter.csproj",
+            "snippet": "Newtonsoft.Json, 13.0.3\n\nRecommendation:\n\nRemove Newtonsoft.Json, and replace with new package Newtonsoft.Json 13.0.4",
+            "protectedSnippet": "Newtonsoft.Json, 13.0.3\n\nRecommendation:\n\nRemove Newtonsoft.Json, and replace with new package Newtonsoft.Json 13.0.4",
+            "label": "Newtonsoft.Json 13.0.3",
+            "properties": {
+              "PackageId": "Newtonsoft.Json",
+              "PackageVersion": "13.0.3",
+              "PackageNewVersion": "13.0.4",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "41014dab-75ce-4ca0-8da8-f7f13c78d4c6",
+          "ruleId": "Project.0002",
+          "projectPath": "DownloadSorter\\DownloadSorter.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: net7.0-windows\nRecommended target framework: net10.0--windows",
+              "protected": "Current target framework: net7.0-windows\nRecommended target framework: net10.0--windows"
+            },
+            "kind": "File",
+            "path": "DownloadSorter\\DownloadSorter.csproj",
+            "snippet": "Current target framework: net7.0-windows\nRecommended target framework: net10.0--windows",
+            "protectedSnippet": "Current target framework: net7.0-windows\nRecommended target framework: net10.0--windows",
+            "properties": {
+              "CurrentTargetFramework": "net7.0-windows",
+              "RecommendedTargetFramework": "net10.0--windows"
+            }
+          }
+        }
+      ],
+      "features": []
+    },
+    {
+      "path": "DownloadSorterTests\\DownloadSorterTests.csproj",
+      "startingProject": true,
+      "issues": 1,
+      "storyPoints": 1,
+      "properties": {
+        "appName": "DownloadSorterTests",
+        "projectKind": "DotNetCoreApp",
+        "frameworks": [
+          "net7.0-windows"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 3,
+        "numberOfCodeFiles": 1,
+        "linesTotal": 1723,
+        "linesOfCode": 40,
+        "totalApiScanned": 21,
+        "minLinesOfCodeToChange": 0,
+        "maxLinesOfCodeToChange": 0
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "0137f332-82c7-429a-8663-2e77dbab811d",
+          "ruleId": "Project.0002",
+          "projectPath": "DownloadSorterTests\\DownloadSorterTests.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: net7.0-windows\nRecommended target framework: net10.0--windows",
+              "protected": "Current target framework: net7.0-windows\nRecommended target framework: net10.0--windows"
+            },
+            "kind": "File",
+            "path": "DownloadSorterTests\\DownloadSorterTests.csproj",
+            "snippet": "Current target framework: net7.0-windows\nRecommended target framework: net10.0--windows",
+            "protectedSnippet": "Current target framework: net7.0-windows\nRecommended target framework: net10.0--windows",
+            "properties": {
+              "CurrentTargetFramework": "net7.0-windows",
+              "RecommendedTargetFramework": "net10.0--windows"
+            }
+          }
+        }
+      ],
+      "features": []
+    }
+  ],
+  "rules": {
+    "Project.0002": {
+      "id": "Project.0002",
+      "isFeature": false,
+      "description": "Project\u0027s target framework(s) needs to be changed to the new target framework that you selected for this upgrade.\n\nDuring upgrade target framework will be adjusted to corresponding platform when applicable. In some cases project would result in multiple target frameworks after the upgrade if it was using features that now have their own platforms in modern .NET frameworks (windows, iOS, Android etc).",
+      "label": "Project\u0027s target framework(s) needs to be changed",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Overview of porting from .NET Framework to .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        },
+        {
+          "title": ".NET project SDKs",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265226",
+          "isCustom": false
+        }
+      ]
+    },
+    "Api.0001": {
+      "id": "Api.0001",
+      "isFeature": false,
+      "description": "API is binary incompatible for selected .NET version: affects existing binaries, often requiring recompilation, because the API has changed in a way that prevents older binaries from loading or executing.",
+      "label": "Binary incompatible for selected .NET version",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Breaking changes in .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262679",
+          "isCustom": false
+        }
+      ]
+    },
+    "Api.0002": {
+      "id": "Api.0002",
+      "isFeature": false,
+      "description": "API is source incompatible for selected .NET version: requires code changes to compile successfully when targeting a new version, such as removing obsolete APIs or changing method signatures.",
+      "label": "Source incompatible for selected .NET version",
+      "severity": "Potential",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Breaking changes in .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262679",
+          "isCustom": false
+        }
+      ]
+    },
+    "GdiDrawing": {
+      "id": "GdiDrawing",
+      "isFeature": false,
+      "description": "System.Drawing APIs for 2D graphics, imaging, and printing that are available via NuGet package System.Drawing.Common. Note: Not recommended for server scenarios due to Windows dependencies; consider cross-platform alternatives like SkiaSharp or ImageSharp for new code.",
+      "label": "GDI\u002B / System.Drawing",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "System.Drawing.Common only supported on Windows",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2341701",
+          "isCustom": false
+        }
+      ]
+    },
+    "WinFormsLegacyControls": {
+      "id": "WinFormsLegacyControls",
+      "isFeature": false,
+      "description": "Legacy Windows Forms controls that have been removed from .NET Core/5\u002B including StatusBar, DataGrid, ContextMenu, MainMenu, MenuItem, and ToolBar. These controls were replaced by more modern alternatives. Use ToolStrip, MenuStrip, ContextMenuStrip, and DataGridView instead.",
+      "label": "Windows Forms Legacy Controls",
+      "severity": "Mandatory",
+      "effort": 3,
+      "links": [
+        {
+          "title": "Windows Forms breaking changes",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2342005",
+          "isCustom": false
+        }
+      ]
+    },
+    "WinForms": {
+      "id": "WinForms",
+      "isFeature": false,
+      "description": "Windows Forms APIs for building Windows desktop applications with traditional Forms-based UI that are available in .NET on Windows. Enable Windows Desktop support: Option 1 (Recommended): Target net9.0-windows; Option 2: Add \u003CUseWindowsDesktop\u003Etrue\u003C/UseWindowsDesktop\u003E; Option 3 (Legacy): Use Microsoft.NET.Sdk.WindowsDesktop SDK.",
+      "label": "Windows Forms",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Windows Forms on .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2341906",
+          "isCustom": false
+        }
+      ]
+    },
+    "NuGet.0002": {
+      "id": "NuGet.0002",
+      "isFeature": false,
+      "description": "NuGet package upgrade is recommended for selected target framework.\n\nStandard .NET packages are recommended to have versions matching version of .NET that project targets.\n\nSome other packages also are known to work better for selected target frameworks.",
+      "label": "NuGet package upgrade is recommended",
+      "severity": "Potential",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262530",
+          "isCustom": false
+        }
+      ]
+    }
+  }
+}
