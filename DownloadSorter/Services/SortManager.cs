@@ -8,7 +8,7 @@ namespace DownloadSorter.Services
 {
 	public class SortManager
 	{
-		public string fileName = "./Sorts.json";
+		public string fileName = "./SortConfig.json";
 
 		public SortConfiguration? CurrentConfig = null;
 
@@ -47,7 +47,7 @@ namespace DownloadSorter.Services
 
 		public bool CreateConfig(string downloadLocation)
 		{
-			if (CheckLocationIsValid(downloadLocation)) { return false; }
+			if (!CheckLocationIsValid(downloadLocation)) { return false; }
 
 			List<SortRule> SortRule = [];
 			SortConfiguration rootStructure = new()
@@ -86,7 +86,6 @@ namespace DownloadSorter.Services
 			return true;
 		}
 
-
 		public static bool CheckNameIsValid(string name)
 		{
 			if (string.IsNullOrEmpty(name))
@@ -118,7 +117,7 @@ namespace DownloadSorter.Services
 
 		public bool AddNewSortRule(string name, string location, string fileExtension)
 		{
-			if (CheckLocationIsValid(location) && CheckFileExtensionIsValid(fileExtension) || CurrentConfig == null)
+			if (!CheckLocationIsValid(location) && !CheckFileExtensionIsValid(fileExtension) || CurrentConfig == null)
 			{
 				return false;
 			}
@@ -193,7 +192,7 @@ namespace DownloadSorter.Services
 
 		public bool ChangeDownloadDirectory(string newDirectory)
 		{
-			if (CheckLocationIsValid(newDirectory)) { return false; }
+			if (!CheckLocationIsValid(newDirectory)) { return false; }
 			try
 			{
 				CurrentConfig!.DownloadLocation = newDirectory;
