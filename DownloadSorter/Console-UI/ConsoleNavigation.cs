@@ -55,7 +55,10 @@ namespace DownloadSorter.Console_UI
 
 				ConsoleHelper.ConsoleWriteLine(ConsoleHelper.TitleArt(), ConsoleColor.Cyan);
 				ConsoleHelper.ConsoleWriteLine(ConsoleHelper.Version(), ConsoleColor.DarkGray);
-				Console.WriteLine();
+				Console.WriteLine("");
+
+				ConsoleHelper.ConsoleWrite("Current Download Directory: ");
+				ConsoleHelper.ConsoleWriteLine(sortManager.CurrentConfig != null ? sortManager.CurrentConfig.DownloadLocation : "Not Set", ConsoleColor.Blue);
 
 				int index = Menu.OptionsMenu(MainMenuOptions);
 

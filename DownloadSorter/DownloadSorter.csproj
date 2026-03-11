@@ -8,11 +8,10 @@
 		<UseWindowsForms>True</UseWindowsForms>
 		<StartupObject>DownloadSorter.Program</StartupObject>
 		<Configurations>Debug;Release</Configurations>
-		<AssemblyVersion>1.104.9566.1214</AssemblyVersion>
+		<AssemblyVersion>1.110.9566.1258</AssemblyVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-		<DebugType>portable</DebugType>
 		<ShouldCreateLogs>True</ShouldCreateLogs>
 		<AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
 		<UpdateAssemblyVersion>False</UpdateAssemblyVersion>
@@ -24,7 +23,8 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-		<DebugType>portable</DebugType>
+		<DebugType>none</DebugType>
+		<Optimize>true</Optimize>
 		<ShouldCreateLogs>True</ShouldCreateLogs>
 		<AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
 		<UpdateAssemblyVersion>False</UpdateAssemblyVersion>
