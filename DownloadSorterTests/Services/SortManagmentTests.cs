@@ -14,7 +14,7 @@ namespace DownloadSorter.Services.Tests
         public void Setup()
         {
             sortManager = new SortManager();
-            sortManager.fileName = testFileName;
+            sortManager.configFile = testFileName;
             CleanupTestFile();
             // Initialize a basic config for tests that need it
             File.WriteAllText(testFileName, "{\"DownloadLocation\":\"" + Path.GetTempPath().Replace("\\", "\\\\") + "\",\"SortRule\":[]}");

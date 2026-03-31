@@ -1,14 +1,10 @@
 ﻿using DownloadSorter.Data;
 using DownloadSorter.Services;
 
-using System.Reflection;
-
 namespace DownloadSorter.Console_UI
 {
 	public class ConsoleMenu
 	{
-
-		public SortManager sortMan = new SortManager();
 
 		public static List<Option>? options;
 

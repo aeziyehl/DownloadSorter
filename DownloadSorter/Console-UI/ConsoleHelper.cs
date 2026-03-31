@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DownloadSorter.Console_UI
+﻿namespace DownloadSorter.Console_UI
 {
 	public class ConsoleHelper
 	{

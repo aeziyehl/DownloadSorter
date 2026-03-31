@@ -1,10 +1,6 @@
 ﻿using DownloadSorter.Data;
 using DownloadSorter.Services;
-using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Xml.Linq;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DownloadSorter.Console_UI
 {
@@ -13,7 +9,6 @@ namespace DownloadSorter.Console_UI
 		private static readonly ConsoleMenu consoleMenu = new();
 		private readonly ConsoleMenu Menu = consoleMenu;
 		private static readonly SortManager sortManager = new();
-
 
 		private readonly List<Option> MainMenuOptions;
 
@@ -70,6 +65,7 @@ namespace DownloadSorter.Console_UI
 
 				var getReturnExitKeys = Menu.GetKeys(ReturnExitOptions);
 				var getReturnExitOption = ConsoleMenu.GetResponse(getReturnExitKeys);
+
 
 				if (getReturnExitOption == "E")
 				{
@@ -290,6 +286,12 @@ namespace DownloadSorter.Console_UI
 				ConsoleHelper.ConsoleWriteLine("No files to sort.", ConsoleColor.Yellow);
 				return;
 			}
+
+			foreach (string number in sortManager.SortFileList)
+			{
+				Console.WriteLine(number);
+			}
+
 			ConsoleHelper.ConsoleWriteLine($"Sorted {filesSorted} files successfully.", ConsoleColor.Green);
 
 		}
@@ -352,6 +354,7 @@ namespace DownloadSorter.Console_UI
 				ChangeDownloadHandler(true);
 
 				ConsoleHelper.ConsoleWriteLine("Configuration created successfully.", ConsoleColor.Green);
+				sortManager.LoadConfig();
 			}
 			Thread.Sleep(2000);
 			Console.Clear();

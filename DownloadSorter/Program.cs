@@ -1,18 +1,38 @@
-﻿// See https://aka.ms/new-console-template for more information
-using DownloadSorter.Console_UI;
-using System.Runtime.InteropServices;
+﻿using DownloadSorter.Console_UI;
+using DownloadSorter.Forms;
+using DownloadSorter.Services;
+using System.Diagnostics;
 
 namespace DownloadSorter
 {
 	internal class Program
 	{
+		[STAThread]
 		static void Main(string[] args)
 		{
-			UIManager uiManager = new UIManager();
-			//if (args.Contains("Console", StringComparer.OrdinalIgnoreCase))
-			//{
-				uiManager.ConsoleDisplay();
-			//}
+			Application.EnableVisualStyles();
+			Application.SetCompatibleTextRenderingDefault(false);
+			Application.SetHighDpiMode(HighDpiMode.SystemAware);
+
+#if DEBUG
+			var form = new LogViewerForm();
+
+			Thread consoleThread = new Thread(() => UIManager.ConsoleDisplay());
+			consoleThread.IsBackground = true;
+			consoleThread.Start();
+
+			Application.Run(form);
+#else
+			LoggerService logger = new();
+			LoggerService.InitLogger();
+
+			Thread consoleThread = new Thread(() => UIManager.ConsoleDisplay());
+			consoleThread.IsBackground = true;
+			consoleThread.Start();
+
+			// Keep the app alive
+			Thread.Sleep(Timeout.Infinite);
+#endif
 		}
 	}
 }

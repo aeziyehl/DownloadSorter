@@ -1,25 +1,25 @@
 ﻿using DownloadSorter.Services;
-
-using System;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using System.Text;
 
 namespace DownloadSorter.Console_UI
 {
 	public class UIManager
 	{
-		public void ConsoleDisplay()
+		public static void ConsoleDisplay()
 		{
-			[DllImport("kernel32.dll", SetLastError = true)]
-			static extern bool AllocConsole();
+			if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+			{
+				[DllImport("kernel32.dll", SetLastError = true)]
+				[return: MarshalAs(UnmanagedType.Bool)]
+				static extern bool AllocConsole();
 
-			AllocConsole();
+				AllocConsole();
+			}	
+			ConsoleNavigation navigation = new();
 
-			ConsoleNavigation navigation = new ConsoleNavigation();
 
 			Console.Title = "Download Sorter";
-			Thread.Sleep(1000);
+			Console.Clear();
 
 			ConsoleNavigation.InitializeConfig();
 			navigation.MainNavigation();
