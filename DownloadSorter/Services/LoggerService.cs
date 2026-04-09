@@ -13,16 +13,17 @@ namespace DownloadSorter.Services
 			{
 				Log.Logger = new LoggerConfiguration()
 				.WriteTo.RichTextBox(richTextBox)
-				.WriteTo.File(@"logs/LOG-.txt", rollingInterval: Serilog.RollingInterval.Day, rollOnFileSizeLimit: true)
+				.WriteTo.File(@"logs/LOG-.txt", rollingInterval: Serilog.RollingInterval.Day, rollOnFileSizeLimit: true, fileSizeLimitBytes: 10 * 1024 * 1024, retainedFileCountLimit: 7
+			)
 				.CreateLogger();
 			}
 			else
 			{
 				Log.Logger = new LoggerConfiguration()
-				 .WriteTo.File(@"logs/LOG-.txt", rollingInterval: Serilog.RollingInterval.Day, rollOnFileSizeLimit: true)
+				.WriteTo.File(@"logs/LOG-.txt", rollingInterval: Serilog.RollingInterval.Day, rollOnFileSizeLimit: true, fileSizeLimitBytes: 10 * 1024 * 1024, retainedFileCountLimit: 7)
 				 .CreateLogger();
 			}
-
+			Log.Information("=======================================================");
 			Log.Information("Download Sorter v" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version);
 			Log.Information("Log Service has Started");
 		}

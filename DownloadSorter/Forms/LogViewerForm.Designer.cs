@@ -38,7 +38,7 @@
 			richTextBox1.Font = new Font("Cascadia Mono", 10.8F);
 			richTextBox1.Location = new Point(0, 0);
 			richTextBox1.Name = "richTextBox1";
-			richTextBox1.Size = new Size(800, 450);
+			richTextBox1.Size = new Size(1347, 517);
 			richTextBox1.TabIndex = 0;
 			richTextBox1.Text = "";
 			richTextBox1.TextChanged += richTextBox1_TextChanged;
@@ -47,9 +47,9 @@
 			// 
 			AutoScaleDimensions = new SizeF(12F, 30F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(800, 450);
+			ClientSize = new Size(1347, 517);
 			Controls.Add(richTextBox1);
-			MinimumSize = new Size(100, 100);
+			MinimumSize = new Size(800, 500);
 			Name = "LogViewerForm";
 			StartPosition = FormStartPosition.CenterParent;
 			Text = "LogViewer";

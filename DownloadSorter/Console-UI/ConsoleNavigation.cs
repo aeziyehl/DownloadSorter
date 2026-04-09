@@ -8,7 +8,8 @@ namespace DownloadSorter.Console_UI
 	{
 		private static readonly ConsoleMenu consoleMenu = new();
 		private readonly ConsoleMenu Menu = consoleMenu;
-		private static readonly SortManager sortManager = new();
+		public static readonly ConfigService configService = new();
+		private static readonly SortManager sortManager = new(configService: configService);
 
 		private readonly List<Option> MainMenuOptions;
 
@@ -25,6 +26,7 @@ namespace DownloadSorter.Console_UI
 				new("Show all sorts", () => { ListSortRuleHandler(); }, "3"),
 				new("Start Sorter", () => { RunSorterHandler(); }, "4"),
 				new("Change Download Directory", () => {ChangeDownloadHandler();}, "5" ),
+				new("Sort List History", () => {SortFileHistoryHandler();}, "6"),
 				new("Exit", () => { Environment.Exit(0); }, "E")
 			];
 
@@ -53,9 +55,9 @@ namespace DownloadSorter.Console_UI
 				Console.WriteLine("");
 
 				ConsoleHelper.ConsoleWrite("Current Download Directory: ");
-				ConsoleHelper.ConsoleWriteLine(sortManager.CurrentConfig != null ? sortManager.CurrentConfig.DownloadLocation : "Not Set", ConsoleColor.Blue);
+				ConsoleHelper.ConsoleWriteLine(configService.CurrentConfig != null ? configService.CurrentConfig.DownloadLocation : "Not Set", ConsoleColor.Blue);
 
-				int index = Menu.OptionsMenu(MainMenuOptions);
+				int index = ConsoleMenu.OptionsMenu(MainMenuOptions);
 
 				Console.Clear();
 				MainMenuOptions[index].Function.Invoke();
@@ -63,7 +65,7 @@ namespace DownloadSorter.Console_UI
 
 				ConsoleMenu.ListOptions(ReturnExitOptions);
 
-				var getReturnExitKeys = Menu.GetKeys(ReturnExitOptions);
+				var getReturnExitKeys = ConsoleMenu.GetKeys(ReturnExitOptions);
 				var getReturnExitOption = ConsoleMenu.GetResponse(getReturnExitKeys);
 
 
@@ -94,7 +96,7 @@ namespace DownloadSorter.Console_UI
 				string fileExtension = ConsoleMenu.GetResponse();
 				Console.WriteLine("");
 
-				if (sortManager.extensionMap!.ContainsKey(fileExtension))
+				if (configService.extensionMap!.ContainsKey(fileExtension))
 				{
 					ConsoleHelper.ConsoleWriteLine("A sort rule with this file extension already exists.", ConsoleColor.Red);
 					ConsoleHelper.ConsoleWriteLine("Please choose a different file extension.", ConsoleColor.Red);
@@ -126,7 +128,7 @@ namespace DownloadSorter.Console_UI
 		{
 			if (!isInEditMode) { Console.WriteLine("=== List of Sort Rules ==="); }
 
-			foreach (var sortRule in sortManager.CurrentConfig!.SortRule)
+			foreach (var sortRule in configService.CurrentConfig!.SortRule)
 			{
 				ConsoleHelper.ConsoleWrite("Name:");
 				ConsoleHelper.ConsoleWriteLine(sortRule.Name, ConsoleColor.Green);
@@ -157,7 +159,7 @@ namespace DownloadSorter.Console_UI
 
 				if (name == "") { break; }
 
-				var sortRule = sortManager.CurrentConfig!.SortRule.Find(x => x.Name == name);
+				var sortRule = configService.CurrentConfig!.SortRule.Find(x => x.Name == name);
 
 				if (sortRule != null)
 				{
@@ -181,7 +183,7 @@ namespace DownloadSorter.Console_UI
 				ConsoleHelper.ConsoleWrite("Managing Sort Rule: ");
 				ConsoleHelper.ConsoleWriteLine(sortRule.Name, ConsoleColor.Green);
 
-				int index = Menu.OptionsMenu(ManageSortRuleMenuOptions);
+				int index = ConsoleMenu.OptionsMenu(ManageSortRuleMenuOptions);
 
 				Console.Clear();
 				if (index == 0)
@@ -287,7 +289,7 @@ namespace DownloadSorter.Console_UI
 				return;
 			}
 
-			foreach (string number in sortManager.SortFileList)
+			foreach (string number in sortManager.SortFileHistoryList)
 			{
 				Console.WriteLine(number);
 			}
@@ -300,23 +302,28 @@ namespace DownloadSorter.Console_UI
 		{
 			while (true)
 			{
-				if (isInit == false && sortManager.CurrentConfig != null)
+				if (isInit == false && configService.CurrentConfig != null)
 				{
-					if (sortManager.CurrentConfig.DownloadLocation != "")
+					if (configService.CurrentConfig.DownloadLocation != "")
 					{
 						ConsoleHelper.ConsoleWrite("Current Download location: ");
-						ConsoleHelper.ConsoleWriteLine(sortManager.CurrentConfig!.DownloadLocation, ConsoleColor.DarkGreen);
+						ConsoleHelper.ConsoleWriteLine(configService.CurrentConfig!.DownloadLocation, ConsoleColor.DarkGreen);
 					}
 
 				}
 
-				ConsoleHelper.ConsoleWriteLine("Enter the download loction e.g C:/Documents/Downloads", ConsoleColor.Yellow);
-				var input = ConsoleMenu.GetResponse();
+				ConsoleHelper.ConsoleWriteLine("Type the download loction, press enter to use User Download Folder ", ConsoleColor.Yellow);
+				var input = ConsoleMenu.GetResponse(returnByEnterKey: true);
+
+				if (input == "")
+				{
+					input = GetDownloadFolder.GetDownloadsFolderPath();
+				}
 
 				bool function;
 				if (isInit)
 				{
-					function = sortManager.CreateConfig(input);
+					function = configService.CreateConfig(input);
 				}
 				else
 				{
@@ -335,27 +342,65 @@ namespace DownloadSorter.Console_UI
 			}
 		}
 
+
+		public static void SortFileHistoryHandler()
+		{
+			sortManager.LoadSortFileHistory();
+			ConsoleHelper.ConsoleWriteLine("=== Sort List History ===");
+			foreach (string SortFile in sortManager.SortFileHistoryList)
+			{
+				Console.WriteLine(SortFile);
+			}
+			Console.WriteLine("");
+		}
+
 		public static void InitializeConfig()
 		{
-			if (sortManager.LoadConfig())
+			if (configService.LoadConfig())
 			{
 				ConsoleHelper.ConsoleWriteLine("Configuration loaded successfully.", ConsoleColor.Green);
+				return;
 			}
-			else
+			if (configService.errorMessages.Count > 0)
+			{
+
+				ConsoleHelper.ConsoleWriteLine("Errors in configuration file:", ConsoleColor.Red);
+				foreach (var error in configService.errorMessages)
+				{
+					ConsoleHelper.ConsoleWriteLine(error, ConsoleColor.Red);
+				}
+				ConsoleHelper.ConsoleWriteLine("Fixing the errors in the config file", ConsoleColor.Red);
+				Thread.Sleep(2000);
+				if (configService.TryFixConfig())
+				{
+					ConsoleHelper.ConsoleWriteLine("Config file fixed successfully.", ConsoleColor.Green);
+					Thread.Sleep(2000);
+					return;
+				}
+				else
+				{
+					ConsoleHelper.ConsoleWriteLine("Failed to fix config file", ConsoleColor.Red);
+					Thread.Sleep(2000);
+					Console.Clear();
+				}
+			}
+
+			if (configService.failedtoLoadConfig)
 			{
 				ConsoleHelper.ConsoleWriteLine("Failed to load configuration. Creating new Configuration", ConsoleColor.Red);
 				Thread.Sleep(2000);
 				Console.Clear();
-
-				ConsoleHelper.ConsoleWriteLine("Creating new configuration...", ConsoleColor.Yellow);
-
-				ConsoleHelper.ConsoleWriteLine("Please enter your download location:");
-
-				ChangeDownloadHandler(true);
-
-				ConsoleHelper.ConsoleWriteLine("Configuration created successfully.", ConsoleColor.Green);
-				sortManager.LoadConfig();
 			}
+
+			ConsoleHelper.ConsoleWriteLine("Creating new configuration...", ConsoleColor.Yellow);
+			Thread.Sleep(2000);
+
+			ConsoleHelper.ConsoleWriteLine("Please enter your download location:");
+
+			ChangeDownloadHandler(true);
+
+			ConsoleHelper.ConsoleWriteLine("Configuration created successfully.", ConsoleColor.Green);
+			configService.LoadConfig();
 			Thread.Sleep(2000);
 			Console.Clear();
 		}

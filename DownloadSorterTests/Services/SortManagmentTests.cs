@@ -1,24 +1,41 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using DownloadSorter.Data;
+﻿using DownloadSorter.Data;
+using DownloadSorter.Services;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 using System.IO;
 
-namespace DownloadSorter.Services.Tests
+namespace DownloadSorterTests.Services
 {
     [TestClass()]
     public class SortManagmentTests
     {
-        private string testFileName = "./TestSortConfig.json";
+        private readonly string testFileName = "./TestSortConfig.json";
         private SortManager sortManager = null!;
+        private ConfigService configService = null!;
 
         [TestInitialize]
         public void Setup()
         {
-            sortManager = new SortManager();
-            sortManager.configFile = testFileName;
-            CleanupTestFile();
-            // Initialize a basic config for tests that need it
-            File.WriteAllText(testFileName, "{\"DownloadLocation\":\"" + Path.GetTempPath().Replace("\\", "\\\\") + "\",\"SortRule\":[]}");
-        }
+			SortConfiguration sortConfig = new()
+			{
+				AutoSort = false,
+				AutoStartup = false,
+				DownloadLocation = Path.GetTempPath().Replace("\\", "\\\\"),
+				SortRule = []
+			};
+
+			configService = new ConfigService
+			{
+				configFile = testFileName
+			};
+
+            sortManager = new SortManager(configService);
+
+			CleanupTestFile();
+
+			string json = JsonConvert.SerializeObject(sortConfig, Formatting.Indented);
+			File.WriteAllText(testFileName, json);
+		}
 
         [TestCleanup]
         public void Cleanup()
@@ -34,122 +51,13 @@ namespace DownloadSorter.Services.Tests
             }
         }
 
-        [TestMethod]
-        public void CheckConfig_FileExists_ReturnsTrue()
-        {
-            // Arrange
-            File.WriteAllText(testFileName, "{}");
-
-            // Act
-            bool result = sortManager.CheckConfig();
-
-            // Assert
-            Assert.IsTrue(result);
-        }
-
-        [TestMethod]
-        public void CheckConfig_FileDoesNotExist_ReturnsFalse()
-        {
-            // Arrange
-            CleanupTestFile();
-
-            // Act
-            bool result = sortManager.CheckConfig();
-
-            // Assert
-            Assert.IsFalse(result);
-        }
-
-        [TestMethod]
-        public void CreateConfig_ValidLocation_CreatesConfigFile()
-        {
-            // Arrange
-            string testDir = Path.GetTempPath();
-            CleanupTestFile();
-
-            // Act
-            bool result = sortManager.CreateConfig(testDir);
-
-            // Assert
-            Assert.IsTrue(result);
-        }
-
-        [TestMethod]
-        public void CreateConfig_InvalidLocation_ReturnsFalse()
-        {
-            // Arrange
-            string invalidPath = "C:/NonExistentPath12345";
-            CleanupTestFile();
-
-            // Act
-            bool result = sortManager.CreateConfig(invalidPath);
-
-            // Assert
-            Assert.IsFalse(result);
-            Assert.IsFalse(File.Exists(testFileName));
-        }
-
-        [TestMethod]
-        public void LoadConfig_ValidConfigFile_LoadsSuccessfully()
-        {
-            // Arrange - File already created in Setup()
-
-            // Act
-            bool result = sortManager.LoadConfig();
-
-            // Assert
-            Assert.IsTrue(result);
-            Assert.IsNotNull(sortManager.CurrentConfig);
-        }
-
-        [TestMethod]
-        public void LoadConfig_NoConfigFile_ReturnsFalse()
-        {
-            // Arrange
-            CleanupTestFile();
-
-            // Act
-            bool result = sortManager.LoadConfig();
-
-            // Assert
-            Assert.IsFalse(result);
-        }
-
-        [TestMethod]
-        public void SaveConfig_ValidConfig_SavesSuccessfully()
-        {
-            // Arrange
-            sortManager.LoadConfig();
-            Assert.IsNotNull(sortManager.CurrentConfig);
-
-            // Act
-            bool result = sortManager.SaveConfig();
-
-            // Assert
-            Assert.IsTrue(result);
-            Assert.IsTrue(File.Exists(testFileName));
-        }
-
-        [TestMethod]
-        public void SaveConfig_NoCurrentConfig_ReturnsFalse()
-        {
-            // Arrange
-            CleanupTestFile();
-            sortManager.CurrentConfig = null;
-
-            // Act
-            bool result = sortManager.SaveConfig();
-
-            // Assert
-            Assert.IsFalse(result);
-        }
 
         [TestMethod]
         public void AddNewSortRule_ValidRule_RuleAddedSuccessfully()
         {
             // Arrange
             string testDir = Path.GetTempPath();
-            sortManager.CreateConfig(testDir);
+            configService.CreateConfig(testDir);
 
             // Note: The AddNewSortRule method has inverted logic in CheckLocationIsValid
             // It returns false when validation passes. This test documents current behavior.
@@ -168,7 +76,7 @@ namespace DownloadSorter.Services.Tests
         {
             // Arrange
             string testDir = Path.GetTempPath();
-            sortManager.CreateConfig(testDir);
+            configService.CreateConfig(testDir);
             string invalidPath = "C:/NonExistentPath12345";
 
             // Act
@@ -182,7 +90,7 @@ namespace DownloadSorter.Services.Tests
         public void AddNewSortRule_NoConfig_ReturnsFalse()
         {
             // Arrange
-            sortManager.CurrentConfig = null;
+            configService.CurrentConfig = null;
 
             // Act
             bool result = sortManager.AddNewSortRule("TestRule", Path.GetTempPath(), ".exe");
@@ -195,21 +103,21 @@ namespace DownloadSorter.Services.Tests
         public void EditSortRule_ValidEdit_RuleUpdatedSuccessfully()
         {
             // Arrange
-            sortManager.LoadConfig();
-            Assert.IsNotNull(sortManager.CurrentConfig);
+            configService.LoadConfig();
+            Assert.IsNotNull(configService.CurrentConfig);
 
             // Create a rule directly
             var rule = new SortRule { Name = "OriginalName", Location = Path.GetTempPath(), FileExtension = ".txt" };
-            sortManager.CurrentConfig!.SortRule.Add(rule);
-            sortManager.SaveConfig();
+            configService.CurrentConfig!.SortRule.Add(rule);
+            configService.SaveConfig();
 
             // Act
             bool result = sortManager.EditSortRule("OriginalName", "NewName", Path.GetTempPath(), ".doc");
 
             // Assert
             Assert.IsTrue(result);
-            Assert.AreEqual("NewName", sortManager.CurrentConfig!.SortRule[0].Name);
-            Assert.AreEqual(".doc", sortManager.CurrentConfig.SortRule[0].FileExtension);
+            Assert.AreEqual("NewName", configService.CurrentConfig!.SortRule[0].Name);
+            Assert.AreEqual(".doc", configService.CurrentConfig.SortRule[0].FileExtension);
         }
 
         [TestMethod]
@@ -217,7 +125,7 @@ namespace DownloadSorter.Services.Tests
         {
             // Arrange
             string testDir = Path.GetTempPath();
-            sortManager.CreateConfig(testDir);
+            configService.CreateConfig(testDir);
 
             // Act
             bool result = sortManager.EditSortRule("NonExistentRule", "NewName", testDir, ".doc");
@@ -230,21 +138,21 @@ namespace DownloadSorter.Services.Tests
         public void RemoveSortRule_ValidRule_RuleRemovedSuccessfully()
         {
             // Arrange
-            sortManager.LoadConfig();
-            Assert.IsNotNull(sortManager.CurrentConfig);
+            configService.LoadConfig();
+            Assert.IsNotNull(configService.CurrentConfig);
 
             // Create a rule directly
             var rule = new SortRule { Name = "RuleToRemove", Location = Path.GetTempPath(), FileExtension = ".txt" };
-            sortManager.CurrentConfig!.SortRule.Add(rule);
-            sortManager.SaveConfig();
-            Assert.AreEqual(1, sortManager.CurrentConfig!.SortRule.Count);
+            configService.CurrentConfig!.SortRule.Add(rule);
+            configService.SaveConfig();
+            Assert.AreEqual(1, configService.CurrentConfig!.SortRule.Count);
 
             // Act
             bool result = sortManager.RemoveSortRule("RuleToRemove");
 
             // Assert
             Assert.IsTrue(result);
-            Assert.AreEqual(0, sortManager.CurrentConfig.SortRule.Count);
+            Assert.AreEqual(0, configService.CurrentConfig.SortRule.Count);
         }
 
         [TestMethod]
@@ -252,7 +160,7 @@ namespace DownloadSorter.Services.Tests
         {
             // Arrange
             string testDir = Path.GetTempPath();
-            sortManager.CreateConfig(testDir);
+            configService.CreateConfig(testDir);
 
             // Act
             bool result = sortManager.RemoveSortRule("NonExistentRule");
@@ -265,8 +173,8 @@ namespace DownloadSorter.Services.Tests
         public void ChangeDownloadDirectory_ValidDirectory_ChangesSuccessfully()
         {
             // Arrange
-            sortManager.LoadConfig();
-            Assert.IsNotNull(sortManager.CurrentConfig);
+            configService.LoadConfig();
+            Assert.IsNotNull(configService.CurrentConfig);
             string newDir = Path.GetTempPath();
 
             // Act
@@ -281,7 +189,7 @@ namespace DownloadSorter.Services.Tests
         {
             // Arrange
             string initialDir = Path.GetTempPath();
-            sortManager.CreateConfig(initialDir);
+            configService.CreateConfig(initialDir);
             string invalidPath = "C:/NonExistentPath12345";
 
             // Act
@@ -400,15 +308,17 @@ namespace DownloadSorter.Services.Tests
                 // Create config file with tempDir as download location
                 var config = new SortConfiguration 
                 { 
+                    AutoSort = false,
+                    AutoStartup = false,
                     DownloadLocation = tempDir,
                     SortRule = new List<SortRule>()
                 };
                 var rule = new SortRule { Name = "TextFiles", Location = destDir, FileExtension = ".txt" };
                 config.SortRule.Add(rule);
 
-                sortManager.CurrentConfig = config;
-                sortManager.SaveConfig();
-                sortManager.LoadConfig(); // Reload to build extension map
+                configService.CurrentConfig = config;
+                configService.SaveConfig();
+                configService.LoadConfig(); // Reload to build extension map
 
                 // Act
                 int result = sortManager.RunSorter();
@@ -429,9 +339,9 @@ namespace DownloadSorter.Services.Tests
 		public void RunSorter_InvalidSourceFolder_ReturnsNegativeOne()
 		{
 			// Arrange
-			sortManager.LoadConfig();
-			Assert.IsNotNull(sortManager.CurrentConfig);
-			sortManager.CurrentConfig!.DownloadLocation = "C:/NonExistentPath12345";
+			configService.LoadConfig();
+			Assert.IsNotNull(configService.CurrentConfig);
+			configService.CurrentConfig!.DownloadLocation = "C:/NonExistentPath12345";
 
 			// Act
 			int result = sortManager.RunSorter();
@@ -457,16 +367,18 @@ namespace DownloadSorter.Services.Tests
 
 				// Create config with a rule for .txt files only
 				var config = new SortConfiguration 
-				{ 
+				{
+					AutoStartup = false,
+					AutoSort = false,
 					DownloadLocation = tempDir,
-					SortRule = new List<SortRule>()
+					SortRule = []
 				};
 				var rule = new SortRule { Name = "TextFiles", Location = destDir, FileExtension = ".txt" };
 				config.SortRule.Add(rule);
 
-				sortManager.CurrentConfig = config;
-				sortManager.SaveConfig();
-				sortManager.LoadConfig(); // Reload to build extension map
+				configService.CurrentConfig = config;
+				configService.SaveConfig();
+				configService.LoadConfig(); // Reload to build extension map
 
 				// Act
 				int result = sortManager.RunSorter();
@@ -501,16 +413,18 @@ namespace DownloadSorter.Services.Tests
 
 				// Create config with a rule for empty extension files
 				var config = new SortConfiguration 
-				{ 
+				{
+					AutoStartup = false,
+					AutoSort = false,
 					DownloadLocation = tempDir,
-					SortRule = new List<SortRule>()
+					SortRule = []
 				};
 				var rule = new SortRule { Name = "NoExtensionFiles", Location = destDir, FileExtension = "" };
 				config.SortRule.Add(rule);
 
-				sortManager.CurrentConfig = config;
-				sortManager.SaveConfig();
-				sortManager.LoadConfig(); // Reload to build extension map
+				configService.CurrentConfig = config;
+				configService.SaveConfig();
+				configService.LoadConfig(); // Reload to build extension map
 
 				// Act
 				int result = sortManager.RunSorter();

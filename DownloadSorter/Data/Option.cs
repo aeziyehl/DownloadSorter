@@ -1,18 +1,11 @@
 ﻿namespace DownloadSorter.Data
 {
-	public class Option
+	public class Option(string name, Action function, string key)
 	{
-		public string Name { get; }
+		public string Name { get; } = name;
 
-		public string Key { get; }
+		public string Key { get; } = key;
 
-		public Action Function { get; }
-
-		public Option(string name, Action function, string key)
-		{
-			Name = name;
-			Function = function;
-			Key = key;
-		}
+		public Action Function { get; } = function;
 	}
 }

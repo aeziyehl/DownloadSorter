@@ -6,7 +6,7 @@
 
 		public SortRules()
 		{
-			SortRule = new List<SortRule>();
+			SortRule = [];
 		}
 
 	}
@@ -25,12 +25,15 @@
 	}
 	public class SortConfiguration
 	{
+		public required bool AutoSort { get; set; }
+		public required bool AutoStartup { get; set; }
+
 		public required string DownloadLocation { get; set; }
 		public required List<SortRule> SortRule { get; set; }
 
 		public SortConfiguration()
 		{
-			SortRule = new List<SortRule>();
+			SortRule = [];
 			DownloadLocation = string.Empty;
 		}
 	}

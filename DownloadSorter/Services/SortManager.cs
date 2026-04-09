@@ -3,24 +3,48 @@ using Newtonsoft.Json;
 
 namespace DownloadSorter.Services
 {
-	public class SortManager
+	public class SortManager(ConfigService? configService)
 	{
-		public string configFile = "./SortConfig.json";
+		public List<string> SortFileHistoryList = [];
 
-		public SortConfiguration? CurrentConfig = null;
+		private readonly ConfigService configService = configService ?? new();
 
-		public List<string> SortFileList = [];
-
-
-		public Dictionary<string, SortRule>? extensionMap = null;
-
-		public bool CheckConfig()
+		public void LoadSortFileHistory()
 		{
-			if (File.Exists(configFile))
+			string historyFile = "./SortHistory.json";
+			if (File.Exists(historyFile))
 			{
-				return true;
+				try
+				{
+					string existingJson = File.ReadAllText(historyFile);
+					SortFileHistoryList = JsonConvert.DeserializeObject<List<string>>(existingJson) ?? [];
+					LoggerService.LogInformation("Successfully loaded sort file history.");
+				}
+				catch (Exception ex)
+				{
+					LoggerService.LogError($"Failed to load sort file history. Error deserializing JSON.", ex);
+					SortFileHistoryList = [];
+				}
 			}
-			return false;
+			else
+			{
+				LoggerService.LogInformation("No existing sort file history found. Starting with an empty history.");
+				SortFileHistoryList = [];
+			}
+		}
+
+		public void SaveSortFileHistory()
+		{
+			string historyFile = "./SortHistory.json";
+			try
+			{
+				string json = JsonConvert.SerializeObject(SortFileHistoryList, Formatting.Indented);
+				File.WriteAllText(historyFile, json);
+			}
+			catch (Exception ex)
+			{
+				LoggerService.LogError($"Failed to save sort file history. Error serializing JSON.", ex);
+			}
 		}
 
 		public static string GenerateName(int len)
@@ -41,52 +65,6 @@ namespace DownloadSorter.Services
 			}
 
 			return Name;
-
-
-		}
-
-		public bool CreateConfig(string downloadLocation)
-		{
-			if (!CheckLocationIsValid(downloadLocation)) { return false; }
-
-			List<SortRule> SortRule = [];
-			SortConfiguration rootStructure = new()
-			{
-				DownloadLocation = downloadLocation,
-				SortRule = SortRule
-			};
-			string json = JsonConvert.SerializeObject(rootStructure, Formatting.Indented);
-			File.WriteAllText(configFile, json);
-
-			return true;
-		}
-
-		public bool LoadConfig()
-		{
-			if (!File.Exists(configFile))
-			{
-				return false;
-			}
-			string existingJson = File.ReadAllText(configFile);
-			CurrentConfig = JsonConvert.DeserializeObject<SortConfiguration>(existingJson);
-			BuildExtensionMap();
-			LoggerService.LogInformation($"Config loaded successfully from {configFile}");
-			return true;
-		}
-
-		public bool SaveConfig()
-		{
-			if (!File.Exists(configFile) || CurrentConfig == null)
-			{
-				LoggerService.LogWarning($"Failed to save config. Config file does not exist or CurrentConfig is null.");
-				return false;
-			}
-
-			string updatedJson = JsonConvert.SerializeObject(CurrentConfig, Formatting.Indented);
-			File.WriteAllText(configFile, updatedJson);
-
-			LoggerService.LogInformation($"Config saved successfully to {configFile}");
-			return true;
 		}
 
 		public static bool CheckNameIsValid(string name)
@@ -123,7 +101,7 @@ namespace DownloadSorter.Services
 
 		public bool AddNewSortRule(string name, string location, string fileExtension)
 		{
-			if (!CheckLocationIsValid(location) || !CheckFileExtensionIsValid(fileExtension) || CurrentConfig == null)
+			if (!CheckLocationIsValid(location) || !CheckFileExtensionIsValid(fileExtension) || configService.CurrentConfig == null)
 			{
 				LoggerService.LogWarning("Failed to add new sort rule due to invalid input or null configuration.");
 				return false;
@@ -139,9 +117,9 @@ namespace DownloadSorter.Services
 					FileExtension = fileExtension
 				};
 
-				CurrentConfig.SortRule.Add(newRule);
-				BuildExtensionMap();
-				return SaveConfig();
+				configService.CurrentConfig.SortRule.Add(newRule);
+				configService.BuildExtensionMap();
+				return configService.SaveConfig();
 			}
 			catch
 			{
@@ -154,7 +132,7 @@ namespace DownloadSorter.Services
 		{
 			try
 			{
-				var ruleToEdit = CurrentConfig!.SortRule.FirstOrDefault(rule => rule.Name.Equals(targetName, StringComparison.OrdinalIgnoreCase));
+				var ruleToEdit = configService.CurrentConfig!.SortRule.FirstOrDefault(rule => rule.Name.Equals(targetName, StringComparison.OrdinalIgnoreCase));
 
 				if (ruleToEdit == null)
 				{
@@ -168,8 +146,8 @@ namespace DownloadSorter.Services
 				ruleToEdit.Location = newLocation;
 				ruleToEdit.FileExtension = newExtension;
 
-				BuildExtensionMap();
-				return SaveConfig();
+				configService.BuildExtensionMap();
+				return configService.SaveConfig();
 			}
 			catch
 			{
@@ -182,7 +160,7 @@ namespace DownloadSorter.Services
 		{
 			try
 			{
-				var ruleToEdit = CurrentConfig!.SortRule.FirstOrDefault(rule => rule.Name.Equals(targetName, StringComparison.OrdinalIgnoreCase));
+				var ruleToEdit = configService.CurrentConfig!.SortRule.FirstOrDefault(rule => rule.Name.Equals(targetName, StringComparison.OrdinalIgnoreCase));
 
 				if (ruleToEdit == null)
 				{
@@ -190,12 +168,12 @@ namespace DownloadSorter.Services
 					return false;
 				}
 
-				var getIndex = CurrentConfig!.SortRule.IndexOf(ruleToEdit!);
+				var getIndex = configService.CurrentConfig!.SortRule.IndexOf(ruleToEdit!);
 
-				CurrentConfig.SortRule.RemoveAt(getIndex);
+				configService.CurrentConfig.SortRule.RemoveAt(getIndex);
 
-				BuildExtensionMap();
-				return SaveConfig();
+				configService.BuildExtensionMap();
+				return configService.SaveConfig();
 			}
 			catch
 			{
@@ -206,14 +184,14 @@ namespace DownloadSorter.Services
 		public bool ChangeDownloadDirectory(string newDirectory)
 		{
 			if (!CheckLocationIsValid(newDirectory))
-			{	
+			{
 				LoggerService.LogError($"Failed to change download directory. Invalid directory: {newDirectory}");
 				return false;
 			}
 			try
 			{
-				CurrentConfig!.DownloadLocation = newDirectory;
-				return SaveConfig();
+				configService.CurrentConfig!.DownloadLocation = newDirectory;
+				return configService.SaveConfig();
 			}
 			catch
 			{
@@ -224,8 +202,9 @@ namespace DownloadSorter.Services
 
 		public int RunSorter()
 		{
-			SortFileList.Clear();
-			string sourceFolder = CurrentConfig!.DownloadLocation;
+			SortFileHistoryList.Clear();
+
+			string sourceFolder = configService.CurrentConfig!.DownloadLocation;
 			if (!Directory.Exists(sourceFolder))
 			{
 				LoggerService.LogError($"Source folder does not exist: {sourceFolder}");
@@ -241,7 +220,7 @@ namespace DownloadSorter.Services
 				string fileExtension = Path.GetExtension(currentFile).ToLower();
 
 				SortRule? matchingRule = null;
-				if (extensionMap != null && extensionMap.TryGetValue(fileExtension, out var rule))
+				if (configService.extensionMap != null && configService.extensionMap.TryGetValue(fileExtension, out var rule))
 				{
 					matchingRule = rule;
 				}
@@ -261,34 +240,27 @@ namespace DownloadSorter.Services
 						if (!File.Exists(destinationPath))
 						{
 							File.Move(currentFile, destinationPath);
-							SortFileList.Add($"{fileName} -> {matchingRule.Location}");
+							SortFileHistoryList.Add($"{fileName} -> {matchingRule.Location}");
 							LoggerService.LogInformation($"Moved {fileName} → {matchingRule.Location}");
 							filesMovedCount++;
+						}
+						else
+						{
+							LoggerService.LogWarning($"Skipped duplicate: {fileName}");
 						}
 					}
 					catch
 					{
-						SortFileList.Add($"Failed to move file: {fileName} to {matchingRule.Location}");
+						SortFileHistoryList.Add($"Failed to move file: {fileName} to {matchingRule.Location}");
 						LoggerService.LogError($"Failed to move file: {fileName} to {matchingRule.Location}");
 						continue;
 					}
 				}
 			}
 
+			SaveSortFileHistory();
 			return filesMovedCount;
 		}
 
-		private void BuildExtensionMap()
-		{
-			extensionMap = new Dictionary<string, SortRule>(StringComparer.OrdinalIgnoreCase);
-			if (CurrentConfig?.SortRule != null)
-			{
-				foreach (var rule in CurrentConfig.SortRule)
-				{
-					string normalizedExtension = rule.FileExtension.ToLower();
-					extensionMap[normalizedExtension] = rule;
-				}
-			}
-		}
 	}
 }

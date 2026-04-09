@@ -34,7 +34,7 @@ namespace DownloadSorter.Console_UI
 			}
 		}
 
-		public List<string> GetKeys(List<Option> options)
+		public static List<string> GetKeys(List<Option> options)
 		{
 			List<string> keys = [];
 			foreach (Option currentOption in options)
@@ -61,7 +61,7 @@ namespace DownloadSorter.Console_UI
 			}
 		}
 
-		public int OptionsMenu(List<Option> options)
+		public static int OptionsMenu(List<Option> options)
 		{
 			ListOptions(options);
 			var getkeys = GetKeys(options);
@@ -73,7 +73,7 @@ namespace DownloadSorter.Console_UI
 			return getkeys.IndexOf(getOption);
 		}
 
-		public void ReturnOptionFunction()
+		public static void ReturnOptionFunction()
 		{
 			Console.Clear();
 			Console.WriteLine("Returning to the Main Menu ......");

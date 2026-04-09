@@ -14,17 +14,23 @@ namespace DownloadSorter
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.SetHighDpiMode(HighDpiMode.SystemAware);
 
+			ConfigService configService = new();
+
+
 #if DEBUG
 			var form = new LogViewerForm();
 
-			Thread consoleThread = new Thread(() => UIManager.ConsoleDisplay());
-			consoleThread.IsBackground = true;
+			Thread consoleThread = new(() => UIManager.ConsoleDisplay())
+			{
+				IsBackground = true,
+				Name = "ConsoleThread"
+			};
 			consoleThread.Start();
-
 			Application.Run(form);
 #else
 			LoggerService logger = new();
 			LoggerService.InitLogger();
+			configService.LoadConfig();
 
 			Thread consoleThread = new Thread(() => UIManager.ConsoleDisplay());
 			consoleThread.IsBackground = true;

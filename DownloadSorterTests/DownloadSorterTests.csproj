@@ -8,7 +8,7 @@
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
     <Configurations>Debug;Release</Configurations>
-    <AssemblyVersion>1.17.9579.1255</AssemblyVersion>
+    <AssemblyVersion>1.36.9595.1151</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>

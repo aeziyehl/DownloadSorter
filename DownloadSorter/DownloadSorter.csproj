@@ -8,8 +8,10 @@
 		<UseWindowsForms>True</UseWindowsForms>
 		<StartupObject>DownloadSorter.Program</StartupObject>
 		<Configurations>Debug;Release</Configurations>
-		<AssemblyVersion>1.267.9586.0743</AssemblyVersion>
+		<AssemblyVersion>2.39.9595.1202</AssemblyVersion>
 		<Platforms>AnyCPU</Platforms>
+		<LangVersion>preview</LangVersion>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -58,6 +60,7 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="10.0.3" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+		<PackageReference Include="Newtonsoft.Json.Schema" Version="4.0.1" />
 		<PackageReference Include="Serilog" Version="4.3.1" />
 		<PackageReference Include="Serilog.Sinks.Console" Version="6.1.1" />
 		<PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
